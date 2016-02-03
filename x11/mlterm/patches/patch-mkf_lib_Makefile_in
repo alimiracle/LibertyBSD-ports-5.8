@@ -1,0 +1,14 @@
+$OpenBSD: patch-mkf_lib_Makefile_in,v 1.4 2015/06/09 12:55:33 dcoppa Exp $
+--- mkf/lib/Makefile.in.orig	Sun Jun  7 03:36:14 2015
++++ mkf/lib/Makefile.in	Tue Jun  9 14:32:17 2015
+@@ -49,8 +49,8 @@ INC = $(PARSER_OBJ:.o=.h) $(CONV_OBJ:.o=.h) $(MAP_OBJ:
+ 
+ LIBNAME = libmkf
+ LIBNAME_DEB = libmkf_deb
+-MAJOR = 16
+-MINOR = 1
++MAJOR = ${LIBmkf_VERSION:R}
++MINOR = ${LIBmkf_VERSION:E}
+ 
+ LIBTOOL_CC = $(LIBTOOL) --mode=compile $(CC) $(CFLAGS)
+ LIBTOOL_LINK = $(LIBTOOL) --mode=link $(CC) @LDFLAGS@

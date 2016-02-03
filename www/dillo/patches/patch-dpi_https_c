@@ -1,0 +1,12 @@
+$OpenBSD: patch-dpi_https_c,v 1.6 2015/07/03 14:33:26 bcallah Exp $
+--- dpi/https.c.orig	Tue Jun 30 10:06:08 2015
++++ dpi/https.c	Wed Jul  1 10:37:09 2015
+@@ -169,7 +169,7 @@ static void yes_ssl_support(void)
+    /*FIXME - provide for sysconfdir variables and such*/
+    if (exit_error == 0){
+       if (SSL_CTX_load_verify_locations(
+-         ssl_context, NULL, "/etc/ssl/certs/" ) == 0){
++         ssl_context, "/etc/ssl/cert.pem", "/etc/ssl/certs/" ) == 0){
+          MSG("Error opening system x509 certificate location\n");
+          exit_error = 1;
+       }

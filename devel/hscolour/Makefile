@@ -1,0 +1,23 @@
+# $OpenBSD: Makefile,v 1.22 2014/11/23 19:43:00 kili Exp $
+
+COMMENT =	Haskell code colourizer
+
+# Dependency of meta/haskell-platform.
+# Please do *not* update without thinking.
+DISTNAME =	hscolour-1.20.3
+REVISION =	0
+# Rip off the hs- prefix, even if it contains a Haskell library.
+PKGNAME =	${DISTNAME}
+CATEGORIES =	devel
+
+HOMEPAGE =	http://code.haskell.org/~malcolm/hscolour/
+
+# GPL2
+PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB =	c m
+
+MODULES =	lang/ghc converters/libiconv
+MODGHC_BUILD =	cabal hackage haddock register
+
+.include <bsd.port.mk>

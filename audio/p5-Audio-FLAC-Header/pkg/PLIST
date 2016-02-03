@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.3 2014/12/21 13:32:54 benoit Exp $
+${P5ARCH}/
+${P5ARCH}/Audio/
+${P5ARCH}/Audio/FLAC/
+${P5ARCH}/Audio/FLAC/Header.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Audio/
+${P5ARCH}/auto/Audio/FLAC/
+${P5ARCH}/auto/Audio/FLAC/Header/
+${P5ARCH}/auto/Audio/FLAC/Header/Header.so
+@man man/man3p/Audio::FLAC::Header.3p

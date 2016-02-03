@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.5 2015/07/16 23:57:19 ajacoutot Exp $
+bin/json_xs
+${P5ARCH}/
+${P5ARCH}/JSON/
+${P5ARCH}/JSON/XS/
+${P5ARCH}/JSON/XS.pm
+${P5ARCH}/JSON/XS/Boolean.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/JSON/
+${P5ARCH}/auto/JSON/XS/
+${P5ARCH}/auto/JSON/XS/XS.so
+@man man/man1/json_xs.1
+@man man/man3p/JSON::XS.3p
+@man man/man3p/JSON::XS::Boolean.3p

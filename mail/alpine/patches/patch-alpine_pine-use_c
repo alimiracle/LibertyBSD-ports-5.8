@@ -1,0 +1,12 @@
+$OpenBSD: patch-alpine_pine-use_c,v 1.4 2015/01/27 13:38:05 ajacoutot Exp $
+--- alpine/pine-use.c.orig	Mon Jan 12 06:12:25 2015
++++ alpine/pine-use.c	Tue Jan 27 08:57:49 2015
+@@ -23,7 +23,7 @@ static char rcsid[] = "$Id: pine-use.c 761 2007-10-23 
+ #include <sys/stat.h>
+ 
+ #ifndef MAILSPOOLPCTS
+-#define MAILSPOOLPCTS "/usr/spool/mail/%s"
++#define MAILSPOOLPCTS "/var/mail/%s"
+ /* #define MAILSPOOLPCTS "/usr/mail/%s" */
+ #endif
+ 

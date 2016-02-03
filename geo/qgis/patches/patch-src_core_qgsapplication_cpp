@@ -1,0 +1,58 @@
+$OpenBSD: patch-src_core_qgsapplication_cpp,v 1.5 2015/07/21 10:06:14 landry Exp $
+Fix paths to various doc files, installed in share/doc/qgis
+per doc/CMakeLists.txt patch
+--- src/core/qgsapplication.cpp.orig	Fri Jun 26 14:38:57 2015
++++ src/core/qgsapplication.cpp	Mon Jun 29 22:08:17 2015
+@@ -434,25 +434,25 @@ const QString QgsApplication::themeName()
+ */
+ const QString QgsApplication::authorsFilePath()
+ {
+-  return ABISYM( mPkgDataPath ) + QString( "/doc/AUTHORS" );
++  return ABISYM( mPkgDataPath ) + QString( "/../doc/qgis/AUTHORS" );
+ }
+ /*!
+   Returns the path to the contributors file.
+ */
+ const QString QgsApplication::contributorsFilePath()
+ {
+-  return ABISYM( mPkgDataPath ) + QString( "/doc/CONTRIBUTORS" );
++  return ABISYM( mPkgDataPath ) + QString( "/../doc/qgis/CONTRIBUTORS" );
+ }
+ const QString QgsApplication::developersMapFilePath()
+ {
+-  return ABISYM( mPkgDataPath ) + QString( "/doc/developersmap.html" );
++  return ABISYM( mPkgDataPath ) + QString( "/../doc/qgis/developersmap.html" );
+ }
+ /*!
+   Returns the path to the sponsors file.
+ */
+ const QString QgsApplication::sponsorsFilePath()
+ {
+-  return ABISYM( mPkgDataPath ) + QString( "/doc/SPONSORS" );
++  return ABISYM( mPkgDataPath ) + QString( "/../doc/qgis/SPONSORS" );
+ }
+ 
+ /*!
+@@ -460,19 +460,19 @@ const QString QgsApplication::sponsorsFilePath()
+ */
+ const QString QgsApplication::donorsFilePath()
+ {
+-  return ABISYM( mPkgDataPath ) + QString( "/doc/DONORS" );
++  return ABISYM( mPkgDataPath ) + QString( "/../doc/qgis/DONORS" );
+ }
+ 
+ /** Returns the path to the sponsors file. */
+ const QString QgsApplication::translatorsFilePath()
+ {
+-  return ABISYM( mPkgDataPath ) + QString( "/doc/TRANSLATORS" );
++  return ABISYM( mPkgDataPath ) + QString( "/../doc/qgis/TRANSLATORS" );
+ }
+ 
+ /** Returns the path to the licence file. */
+ const QString QgsApplication::licenceFilePath()
+ {
+-  return ABISYM( mPkgDataPath ) + QString( "/doc/LICENSE" );
++  return ABISYM( mPkgDataPath ) + QString( "/../doc/qgis/LICENSE" );
+ }
+ 
+ /*!

@@ -1,0 +1,119 @@
+@comment $OpenBSD: PLIST,v 1.7 2015/06/10 09:28:08 benoit Exp $
+@conflict polarssl-*
+include/polarssl/
+include/polarssl/aes.h
+include/polarssl/aesni.h
+include/polarssl/arc4.h
+include/polarssl/asn1.h
+include/polarssl/asn1write.h
+include/polarssl/base64.h
+include/polarssl/bignum.h
+include/polarssl/blowfish.h
+include/polarssl/bn_mul.h
+include/polarssl/camellia.h
+include/polarssl/ccm.h
+include/polarssl/certs.h
+include/polarssl/check_config.h
+include/polarssl/cipher.h
+include/polarssl/cipher_wrap.h
+include/polarssl/compat-1.2.h
+include/polarssl/config.h
+include/polarssl/ctr_drbg.h
+include/polarssl/debug.h
+include/polarssl/des.h
+include/polarssl/dhm.h
+include/polarssl/ecdh.h
+include/polarssl/ecdsa.h
+include/polarssl/ecp.h
+include/polarssl/entropy.h
+include/polarssl/entropy_poll.h
+include/polarssl/error.h
+include/polarssl/gcm.h
+include/polarssl/havege.h
+include/polarssl/hmac_drbg.h
+include/polarssl/md.h
+include/polarssl/md2.h
+include/polarssl/md4.h
+include/polarssl/md5.h
+include/polarssl/md_wrap.h
+include/polarssl/memory.h
+include/polarssl/memory_buffer_alloc.h
+include/polarssl/net.h
+include/polarssl/oid.h
+include/polarssl/openssl.h
+include/polarssl/padlock.h
+include/polarssl/pbkdf2.h
+include/polarssl/pem.h
+include/polarssl/pk.h
+include/polarssl/pk_wrap.h
+include/polarssl/pkcs11.h
+include/polarssl/pkcs12.h
+include/polarssl/pkcs5.h
+include/polarssl/platform.h
+include/polarssl/ripemd160.h
+include/polarssl/rsa.h
+include/polarssl/sha1.h
+include/polarssl/sha256.h
+include/polarssl/sha512.h
+include/polarssl/ssl.h
+include/polarssl/ssl_cache.h
+include/polarssl/ssl_ciphersuites.h
+include/polarssl/threading.h
+include/polarssl/timing.h
+include/polarssl/version.h
+include/polarssl/x509.h
+include/polarssl/x509_crl.h
+include/polarssl/x509_crt.h
+include/polarssl/x509_csr.h
+include/polarssl/xtea.h
+lib/libmbedtls.a
+@lib lib/libmbedtls.so.${LIBmbedtls_VERSION}
+share/doc/mbedtls/
+share/doc/mbedtls/ChangeLog
+share/doc/mbedtls/README.rst
+share/examples/mbedtls/
+share/examples/mbedtls/README
+@bin share/examples/mbedtls/aescrypt2
+@bin share/examples/mbedtls/benchmark
+@bin share/examples/mbedtls/cert_app
+@bin share/examples/mbedtls/cert_req
+@bin share/examples/mbedtls/cert_write
+@bin share/examples/mbedtls/crl_app
+@bin share/examples/mbedtls/crypt_and_hash
+@bin share/examples/mbedtls/dh_client
+@bin share/examples/mbedtls/dh_genprime
+@bin share/examples/mbedtls/dh_server
+@bin share/examples/mbedtls/gen_entropy
+@bin share/examples/mbedtls/gen_key
+@bin share/examples/mbedtls/gen_random_ctr_drbg
+@bin share/examples/mbedtls/gen_random_havege
+@bin share/examples/mbedtls/generic_sum
+@bin share/examples/mbedtls/hello
+@bin share/examples/mbedtls/key_app
+@bin share/examples/mbedtls/md5sum
+@bin share/examples/mbedtls/mini_client
+@bin share/examples/mbedtls/mpi_demo
+@bin share/examples/mbedtls/o_p_test
+@bin share/examples/mbedtls/pem2der
+@bin share/examples/mbedtls/pk_decrypt
+@bin share/examples/mbedtls/pk_encrypt
+@bin share/examples/mbedtls/pk_sign
+@bin share/examples/mbedtls/pk_verify
+@bin share/examples/mbedtls/req_app
+@bin share/examples/mbedtls/rsa_decrypt
+@bin share/examples/mbedtls/rsa_encrypt
+@bin share/examples/mbedtls/rsa_genkey
+@bin share/examples/mbedtls/rsa_sign
+@bin share/examples/mbedtls/rsa_verify
+@bin share/examples/mbedtls/selftest
+@bin share/examples/mbedtls/sha1sum
+@bin share/examples/mbedtls/sha2sum
+@bin share/examples/mbedtls/ssl_cert_test
+@bin share/examples/mbedtls/ssl_client1
+@bin share/examples/mbedtls/ssl_client2
+@bin share/examples/mbedtls/ssl_fork_server
+@bin share/examples/mbedtls/ssl_mail_client
+@bin share/examples/mbedtls/ssl_pthread_server
+@bin share/examples/mbedtls/ssl_server
+@bin share/examples/mbedtls/ssl_test
+@bin share/examples/mbedtls/strerror

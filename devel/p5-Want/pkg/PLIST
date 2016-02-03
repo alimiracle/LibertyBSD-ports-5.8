@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.5 2015/05/03 14:19:00 jasper Exp $
+${P5ARCH}/
+${P5ARCH}/Want.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Want/
+${P5ARCH}/auto/Want/Want.so
+@man man/man3p/Want.3p

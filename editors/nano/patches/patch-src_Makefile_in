@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.6 2015/03/25 20:27:19 naddy Exp $
+--- src/Makefile.in.orig	Mon Mar 23 04:46:54 2015
++++ src/Makefile.in	Tue Mar 24 23:03:50 2015
+@@ -303,7 +303,7 @@ nano_SOURCES = browser.c \
+ 		utils.c \
+ 		winio.c 
+ 
+-nano_LDADD = @GLIB_LIBS@ @LIBINTL@
++nano_LDADD = @GLIB_LIBS@ @LTLIBINTL@
+ all: all-am
+ 
+ .SUFFIXES:

@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:10 ajacoutot Exp $
+@pkgpath x11/inconsolata-font
+share/fonts/
+@fontdir share/fonts/Inconsolata/
+share/fonts/Inconsolata/Inconsolata.otf

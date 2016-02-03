@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_JavaScriptCore_heap_CopiedBlock_h,v 1.2 2015/03/27 18:38:45 ajacoutot Exp $
+
+Fix alignment issue (from Fedora).
+
+--- Source/JavaScriptCore/heap/CopiedBlock.h.orig	Mon Mar 23 09:08:04 2015
++++ Source/JavaScriptCore/heap/CopiedBlock.h	Fri Mar 27 10:17:17 2015
+@@ -79,7 +79,7 @@ class CopiedBlock : public HeapBlock<CopiedBlock> { (p
+     size_t size();
+     size_t capacity();
+ 
+-    static const size_t blockSize = 32 * KB;
++    static const size_t blockSize = 64 * KB;
+ 
+     bool hasWorkList();
+     CopyWorkList& workList();

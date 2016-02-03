@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.3 2014/10/15 10:31:21 sebastia Exp $
+lib/tcl/tcludp/
+lib/tcl/tcludp/libudp.so
+lib/tcl/tcludp/pkgIndex.tcl
+@man man/mann/udp.n
+share/examples/tcludp/
+share/examples/tcludp/broadcast.tcl
+share/examples/tcludp/bug1158628.tcl
+share/examples/tcludp/chat.tcl
+share/examples/tcludp/multicast.tcl
+share/examples/tcludp/udpcat.tcl

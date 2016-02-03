@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_ui_toolbar_wrench_menu_model_cc,v 1.14 2015/07/23 13:44:04 robert Exp $
+--- chrome/browser/ui/toolbar/wrench_menu_model.cc.orig.port	Wed Jul 22 08:43:51 2015
++++ chrome/browser/ui/toolbar/wrench_menu_model.cc	Wed Jul 22 08:44:17 2015
+@@ -796,7 +796,7 @@ bool WrenchMenuModel::IsCommandIdVisible(int command_i
+     case IDC_UPGRADE_DIALOG:
+       return browser_defaults::kShowUpgradeMenuItem &&
+           UpgradeDetector::GetInstance()->notify_upgrade();
+-#if !defined(OS_LINUX) || defined(USE_AURA)
++#if (!defined(OS_LINUX) && !defined(OS_BSD)) || defined(USE_AURA)
+     case IDC_BOOKMARK_PAGE:
+       return !chrome::ShouldRemoveBookmarkThisPageUI(browser_->profile());
+     case IDC_BOOKMARK_ALL_TABS:

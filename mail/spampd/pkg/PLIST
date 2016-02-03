@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.2 2014/11/29 10:18:48 ajacoutot Exp $
+@comment homedir needed to store the .spamassassin bayes DB
+@newgroup _spampd:746
+@newuser _spampd:746:_spampd:daemon:spampd user:/var/spampd:/sbin/nologin
+@extraunexec rm -rf /var/spampd/.spamassassin
+@man man/man8/spampd.8
+sbin/spampd
+@owner _spampd
+@group _spampd
+@sample /var/spampd/
+@owner
+@group
+@rcscript ${RCDIR}/spampd

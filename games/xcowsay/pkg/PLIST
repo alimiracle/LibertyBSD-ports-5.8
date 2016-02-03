@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.2 2014/09/16 12:39:22 sthen Exp $
+bin/xcowdream
+bin/xcowfortune
+@bin bin/xcowsay
+bin/xcowthink
+@man man/man6/xcowsay.6
+share/locale/pt_BR/LC_MESSAGES/xcowsay.mo
+share/locale/ru/LC_MESSAGES/xcowsay.mo
+share/xcowsay/
+share/xcowsay/cow_large.png
+share/xcowsay/cow_med.png
+share/xcowsay/cow_small.png

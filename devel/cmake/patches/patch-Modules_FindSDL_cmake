@@ -1,0 +1,15 @@
+$OpenBSD: patch-Modules_FindSDL_cmake,v 1.9 2015/01/23 18:01:09 dcoppa Exp $
+--- Modules/FindSDL.cmake.orig	Wed Jan 21 08:10:26 2015
++++ Modules/FindSDL.cmake	Fri Jan 23 11:10:10 2015
+@@ -96,6 +96,11 @@ else()
+   set(VC_LIB_PATH_SUFFIX lib/x86)
+ endif()
+ 
++# On OpenBSD SDL depends on libiconv and SDL_stdinc.h includes iconv.h,
++# which is located in ${LOCALBASE}/include. Append ${LOCALBASE}/include
++# to the SDL_INCLUDE_DIR, thus allow to build SDL apps out of box.
++list(APPEND SDL_INCLUDE_DIR ${LOCALBASE}/include)
++
+ # SDL-1.1 is the name used by FreeBSD ports...
+ # don't confuse it for the version number.
+ find_library(SDL_LIBRARY_TEMP

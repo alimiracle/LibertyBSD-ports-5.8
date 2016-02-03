@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:48 naddy Exp $
+include/GL/
+include/GL/glc.h
+lib/libGLC.a
+lib/libGLC.la
+@lib lib/libGLC.so.${LIBGLC_VERSION}
+lib/pkgconfig/quesoglc.pc

@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.4 2015/07/16 23:57:24 ajacoutot Exp $
+${P5ARCH}/
+${P5ARCH}/auto/
+${P5ARCH}/auto/indirect/
+${P5ARCH}/auto/indirect/indirect.so
+${P5ARCH}/indirect.pm
+@man man/man3p/indirect.3p

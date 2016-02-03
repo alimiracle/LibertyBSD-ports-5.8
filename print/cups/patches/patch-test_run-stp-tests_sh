@@ -1,0 +1,21 @@
+$OpenBSD: patch-test_run-stp-tests_sh,v 1.14 2015/02/10 08:29:33 ajacoutot Exp $
+--- test/run-stp-tests.sh.orig	Fri Dec 19 17:56:15 2014
++++ test/run-stp-tests.sh	Tue Feb 10 09:04:12 2015
+@@ -36,7 +36,7 @@ umask 022
+ # Make the IPP test program...
+ #
+ 
+-make
++${MAKE_PROGRAM}
+ 
+ #
+ # Solaris has a non-POSIX grep in /bin...
+@@ -593,7 +593,7 @@ fi
+ 
+ export LD_LIBRARY_PATH
+ 
+-LD_PRELOAD="$root/cups/libcups.so.2:$root/filter/libcupsimage.so.2:$root/cgi-bin/libcupscgi.so.1:$root/scheduler/libcupsmime.so.1:$root/ppdc/libcupsppdc.so.1"
++LD_PRELOAD="$root/cups/libcups.so.${LIBcups_VERSION}:$root/filter/libcupsimage.so.${LIBcupsimage_VERSION}:$root/cgi-bin/libcupscgi.so.${LIBcupscgi_VERSION}:$root/scheduler/libcupsmime.so.${LIBcupsmime_VERSION}:$root/ppdc/libcupsppdc.so.${LIBcupsppdc_VERSION}"
+ if test `uname` = SunOS -a -r /usr/lib/libCrun.so.1; then
+ 	LD_PRELOAD="/usr/lib/libCrun.so.1:$LD_PRELOAD"
+ fi

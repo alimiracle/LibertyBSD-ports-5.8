@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_makefile,v 1.3 2015/06/22 22:38:56 bcallah Exp $
+--- src/makefile.orig	Mon Jun 22 18:26:15 2015
++++ src/makefile	Mon Jun 22 18:28:55 2015
+@@ -81,25 +81,17 @@ NE_NOWCHAR=
+ NE_DEBUG=
+ NE_TEST=
+ 
+-CC=c99
++CC?=c99
+ 
+-ifeq ($(CC),gcc)
+ GCCFLAGS=-std=c99 -Wall -Wno-parentheses
+-endif
+ 
+ CFLAGS=$(OPTS) $(GCCFLAGS) \
+-	-D_REGEX_LARGE_OFFSETS -D_GNU_SOURCE -DSTDC_HEADERS -Dinline=__inline__ \
+-	$(if $(NE_NOWCHAR), -DNOWCHAR,) \
+-	$(if $(NE_TEST),    -DNE_TEST -coverage,) \
+-	$(if $(NE_DEBUG),   -g,-O3 -DNDEBUG) \
+-	$(if $(NE_TERMCAP), -DTERMCAP,) \
+-	$(if $(NE_ANSI),    -DTERMCAP -DANSI,)
++	-D_REGEX_LARGE_OFFSETS -D_GNU_SOURCE -DSTDC_HEADERS -Dinline=__inline__
+ 
+-
+ LIBS=$(if $(NE_TERMCAP)$(NE_ANSI),,-lcurses)
+ 
+-ne:	$(OBJS) $(if $(NE_TERMCAP)$(NE_ANSI),$(TERMCAPOBJS),)
+-	$(CC) $(OPTS) $(LDFLAGS) $(if $(NE_TEST), -coverage -lefence,) $^ -lm $(LIBS) -o $(PROGRAM)
++ne:	$(OBJS)
++	$(CC) $(OPTS) $(LDFLAGS) -lm -lcurses $(LIBS) -o $(PROGRAM) $(OBJS)
+ 
+ clean:
+ 	rm -f ne *.o *.gcda *.gcda.info *.gcno core

@@ -1,0 +1,33 @@
+$OpenBSD: patch-samples_xmobar_config,v 1.9 2015/03/18 15:32:02 dcoppa Exp $
+--- samples/xmobar.config.orig	Sun Mar  8 08:08:58 2015
++++ samples/xmobar.config	Wed Mar 18 10:19:16 2015
+@@ -1,5 +1,5 @@
+-Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+-       , addtionalFonts = []
++Config { font = "fixed"
++       , additionalFonts = []
+        , borderColor = "black"
+        , border = TopB
+        , bgColor = "black"
+@@ -20,19 +20,11 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+                                           "--normal","green",
+                                           "--high","red",
+                                           "--low","lightblue"] 36000
+-                    , Run Network "eth0" ["-L","0","-H","32",
+-                                          "--normal","green","--high","red"] 10
+-                    , Run Network "eth1" ["-L","0","-H","32",
+-                                          "--normal","green","--high","red"] 10
+-                    , Run Cpu ["-L","3","-H","50",
+-                               "--normal","green","--high","red"] 10
+-                    , Run Memory ["-t","Mem: <usedratio>%"] 10
+-                    , Run Swap [] 10
++                    , Run Battery ["-t","AC: <status> Batt: <left> <minleft>"] 10
+                     , Run Com "uname" ["-s","-r"] "" 36000
+     		    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+                     ]
+        , sepChar = "%"
+        , alignSep = "}{"
+-       , template = "%cpu% | %memory% * %swap% | %eth0% - %eth1% }\
+-                    \{ <fc=#ee9a00>%date%</fc>| %EGPF% | %uname%"
++       , template = "%battery% }{ <fc=#ee9a00>%date%</fc> | %EGPF% | %uname%"
+        }

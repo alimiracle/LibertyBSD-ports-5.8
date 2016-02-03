@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.5 2015/03/31 09:44:48 ajacoutot Exp $
+share/doc/nethack/
+share/doc/nethack/Guidebook.txt
+share/fonts/
+@fontdir share/fonts/hack/
+share/fonts/hack/ibm.pcf.gz
+share/fonts/hack/nh10.pcf.gz

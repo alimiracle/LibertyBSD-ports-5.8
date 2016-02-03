@@ -1,0 +1,17 @@
+$OpenBSD: patch-mk_config_mk_in,v 1.10 2014/11/22 20:23:23 kili Exp $
+
+Don't build shared libs for now.
+
+--- mk/config.mk.in.orig	Thu Jul 10 06:27:16 2014
++++ mk/config.mk.in	Sun Nov  2 21:56:40 2014
+@@ -99,7 +99,9 @@ NoSharedLibsPlatformList = powerpc-unknown-linux \
+ 	x86_64-unknown-mingw32 \
+ 	i386-unknown-mingw32 \
+ 	sparc-sun-solaris2 \
+-	sparc-unknown-linux
++	sparc-unknown-linux \
++	i386-unknown-openbsd \
++	x86_64-unknown-openbsd
+ 
+ ifeq "$(SOLARIS_BROKEN_SHLD)" "YES"
+ NoSharedLibsPlatformList += i386-unknown-solaris2

@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_man_nano_1,v 1.5 2015/03/25 20:27:19 naddy Exp $
+--- doc/man/nano.1.orig	Mon Mar 23 04:46:00 2015
++++ doc/man/nano.1	Tue Mar 24 23:03:50 2015
+@@ -262,8 +262,6 @@ http://www.nano-editor.org/
+ .PD 0
+ .TP
+ \fBnanorc\fP(5)
+-.PP
+-\fI/usr/share/doc/nano/\fP (or equivalent on your system)
+ 
+ .SH AUTHOR
+ Chris Allegretta <chrisa@asty.org>, et al (see the files \fIAUTHORS\fP and

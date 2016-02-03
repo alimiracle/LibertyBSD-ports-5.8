@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_config_parser_c,v 1.6 2015/03/30 12:33:46 dcoppa Exp $
+--- src/config_parser.c.orig	Sun Mar 29 19:07:08 2015
++++ src/config_parser.c	Mon Mar 30 14:13:25 2015
+@@ -1002,8 +1002,8 @@ bool parse_file(const char *f, bool use_nagbar) {
+ 
+         char *editaction,
+             *pageraction;
+-        sasprintf(&editaction, "i3-sensible-editor \"%s\" && i3-msg reload\n", f);
+-        sasprintf(&pageraction, "i3-sensible-pager \"%s\"\n", errorfilename);
++        sasprintf(&editaction, "/usr/bin/vi \"%s\" && i3-msg reload\n", f);
++        sasprintf(&pageraction, "/usr/bin/less \"%s\"\n", errorfilename);
+         char *argv[] = {
+             NULL, /* will be replaced by the executable path */
+             "-f",

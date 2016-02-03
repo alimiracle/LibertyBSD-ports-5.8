@@ -1,0 +1,34 @@
+$OpenBSD: patch-rsnapshot_conf_default_in,v 1.4 2015/07/03 07:29:58 ajacoutot Exp $
+--- rsnapshot.conf.default.in.orig	Wed Jul  1 23:19:55 2015
++++ rsnapshot.conf.default.in	Fri Jul  3 09:29:28 2015
+@@ -50,7 +50,7 @@ snapshot_root	/.snapshots/
+ 
+ # Uncomment this to enable remote ssh backups over rsync.
+ #
+-#@CMD_SSH@
++@CMD_SSH@
+ 
+ # Comment this out to disable syslog support.
+ #
+@@ -168,7 +168,7 @@ lockfile	/var/run/rsnapshot.pid
+ # This is the best way to support special files (FIFOs, etc) cross-platform.
+ # The default is 0 (off).
+ #
+-#link_dest	0
++link_dest	1
+ 
+ # When sync_first is enabled, it changes the default behaviour of rsnapshot.
+ # Normally, when rsnapshot is called with its lowest interval
+@@ -217,9 +217,9 @@ lockfile	/var/run/rsnapshot.pid
+ ###############################
+ 
+ # LOCALHOST
+-backup	/home/		localhost/
+-backup	/etc/		localhost/
+-backup	/usr/local/	localhost/
++#backup	/home/		localhost/
++#backup	/etc/		localhost/
++#backup	/usr/local/	localhost/
+ #backup	/var/log/rsnapshot		localhost/
+ #backup	/etc/passwd	localhost/
+ #backup	/home/foo/My Documents/		localhost/

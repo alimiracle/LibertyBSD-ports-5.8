@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:44:48 ajacoutot Exp $
+@bin bin/cmatrix
+@man man/man6/cmatrix.6
+share/fonts/
+@fontdir share/fonts/misc/
+share/fonts/misc/mtx.pcf

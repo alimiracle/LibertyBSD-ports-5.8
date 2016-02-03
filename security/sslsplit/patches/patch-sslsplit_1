@@ -1,0 +1,32 @@
+$OpenBSD: patch-sslsplit_1,v 1.4 2014/12/12 21:51:59 sthen Exp $
+--- sslsplit.1.orig	Fri Nov 28 09:28:58 2014
++++ sslsplit.1	Fri Dec 12 21:49:38 2014
+@@ -288,7 +288,7 @@ Drop privileges after opening sockets and files by set
+ effective and stored user IDs to \fIuser\fP and loading the appropriate
+ primary and ancillary groups.  If \fB-u\fP is not given, SSLsplit will drop
+ privileges to the stored UID if EUID != UID (setuid bit scenario), or to
+-\fBnobody\fP if running with full \fBroot\fP privileges (EUID == UID == 0)
++\fB_sslsplit\fP if running with full \fBroot\fP privileges (EUID == UID == 0)
+ and \fB-S\fP is not used.
+ Due to an Apple bug, \fB-u\fP cannot be used with \fBpf\fP proxyspecs on
+ Mac OS X.
+@@ -455,6 +455,19 @@ First in IPFW, then in pf \fBdivert-to\fP syntax:
+ \fBipfw add fwd       ::1,10443 tcp from 2001:db8::/64 to any 443\fP
+ \fBipfw add fwd 127.0.0.1,10080 tcp from 192.0.2.0/24  to any  80\fP
+ \fBipfw add fwd 127.0.0.1,10443 tcp from 192.0.2.0/24  to any 443\fP
++.fi
++.RE
++.LP
++.RS
++.nf
++\fBpass in quick on em0 proto tcp from 2001:db8::/64 to any port  80 \\
++         divert-to       ::1 port 10080\fP
++\fBpass in quick on em0 proto tcp from 2001:db8::/64 to any port 443 \\
++         divert-to       ::1 port 10443\fP
++\fBpass in quick on em0 proto tcp from  192.0.2.0/24 to any port  80 \\
++         divert-to 127.0.0.1 port 10080\fP
++\fBpass in quick on em0 proto tcp from  192.0.2.0/24 to any port 443 \\
++         divert-to 127.0.0.1 port 10443\fP
+ .fi
+ .RE
+ .LP

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_events_c,v 1.8 2015/04/23 05:54:04 dcoppa Exp $
+--- src/events.c.orig	Wed Apr  8 11:21:11 2015
++++ src/events.c	Thu Apr 23 07:46:02 2015
+@@ -123,7 +123,7 @@ void init_buttonbindings(void)
+ 
+ 	free(confpath);
+ 
+-	if (!conf && ((conf = fopen("/etc/feh/buttons", "r")) == NULL))
++	if (!conf && ((conf = fopen("${SYSCONFDIR}/feh/buttons", "r")) == NULL))
+ 		return;
+ 
+ 	while (fgets(line, sizeof(line), conf)) {

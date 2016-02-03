@@ -1,0 +1,24 @@
+$OpenBSD: patch-config_h_cmake,v 1.4 2015/05/12 09:37:03 sthen Exp $
+--- config.h.cmake.orig	Mon Apr 20 10:44:20 2015
++++ config.h.cmake	Mon Apr 20 16:11:52 2015
+@@ -2,18 +2,17 @@
+ #define CONFIG_H
+ 
+ #cmakedefine HAVE_COUNTER_MACRO
+-#cmakedefine HAVE_BACKTRACE_SYMBOLS
+ #cmakedefine HAVE_PIPE2
+ #cmakedefine HAVE_VFORK
+ #cmakedefine HAVE_DLADDR
+-#cmakedefine HAVE_LIBEXECINFO
+ #cmakedefine HAVE_CXXABI_H
+ #cmakedefine HAVE_NICE
++#cmakedefine01 Backtrace_FOUND
+ 
+ #cmakedefine ICINGA2_UNITY_BUILD
+ 
+ #define ICINGA_PREFIX "${CMAKE_INSTALL_PREFIX}"
+-#define ICINGA_SYSCONFDIR "${CMAKE_INSTALL_FULL_SYSCONFDIR}"
++#define ICINGA_SYSCONFDIR "%SYSCONFDIR%"
+ #define ICINGA_RUNDIR "${ICINGA2_RUNDIR}"
+ #define ICINGA_LOCALSTATEDIR "${CMAKE_INSTALL_FULL_LOCALSTATEDIR}"
+ #define ICINGA_PKGDATADIR "${CMAKE_INSTALL_FULL_DATADIR}/icinga2"

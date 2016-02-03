@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_interfaces_c,v 1.2 2015/07/26 19:19:33 steven Exp $
+--- src/interfaces.c.orig	Mon Sep  9 14:33:01 2013
++++ src/interfaces.c	Sun Jul 19 19:27:50 2015
+@@ -221,13 +221,12 @@ interfaces_init_data_libnet( struct interface_data *in
+     if ( ( libnet_hnd = libnet_init( LIBNET_LINK, interface->ifname, errbuflibnet ) ) )
+     {
+         etheraddr = libnet_get_hwaddr( libnet_hnd );
++        libnet_destroy( libnet_hnd );
+ 
+         if ( etheraddr && memcmp( (void *)etheraddr, "\x0\x0\x0\x0\x0\x0", 6 ) )
+         {
+             memcpy( (void *)interface->etheraddr, (void *)etheraddr, ETHER_ADDR_LEN );
+         }
+-        
+-        libnet_destroy( libnet_hnd );
+ 
+         write_log( 0," %s MAC = %02x%02x.%02x%02x.%02x%02x\n", interface->ifname, 
+                    etheraddr->ether_addr_octet[0], etheraddr->ether_addr_octet[1],
+@@ -286,7 +285,9 @@ interfaces_init( THREAD *pcap_th )
+     
+     while( index )
+     {
+-        if ( ( strncmp( index->name, "any", strlen( index->name ) ) ) && ( index->flags != PCAP_IF_LOOPBACK ) )
++        if ( ( strncmp( index->name, "any", strlen( index->name ) ) ) &&
++		(strstr(index->name,"pflog") == NULL) && 
++		( index->flags != PCAP_IF_LOOPBACK ) )
+         {
+             if ( ( iface_data = (struct interface_data *)calloc( 1, sizeof( struct interface_data ) ) ) ) 
+             {

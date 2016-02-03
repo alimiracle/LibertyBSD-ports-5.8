@@ -1,0 +1,13 @@
+$OpenBSD: patch-provider_client_ECChangeAdvisor_cpp,v 1.2 2015/04/05 22:25:08 robert Exp $
+--- provider/client/ECChangeAdvisor.cpp.orig	Thu Mar  5 16:54:03 2015
++++ provider/client/ECChangeAdvisor.cpp	Fri Apr  3 23:11:10 2015
+@@ -52,6 +52,9 @@
+ #include "ECChangeAdvisor.h"
+ #include "ECMsgStore.h"
+ 
++#ifdef __OpenBSD__
++#define PTHREAD_MUTEX_RECURSIVE_NP PTHREAD_MUTEX_RECURSIVE
++#endif
+ 
+ #ifdef _DEBUG
+ #define new DEBUG_NEW

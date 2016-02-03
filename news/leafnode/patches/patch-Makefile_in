@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.22 2015/04/06 16:26:22 jca Exp $
+--- Makefile.in.orig	Tue Jun 11 23:32:46 2013
++++ Makefile.in	Fri Jan  2 21:45:49 2015
+@@ -1435,7 +1435,7 @@ info-am:
+ 
+ install-data-am: install-man
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
++
+ install-dvi: install-dvi-recursive
+ 
+ install-dvi-am:

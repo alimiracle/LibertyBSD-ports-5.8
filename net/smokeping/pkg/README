@@ -1,0 +1,59 @@
+$OpenBSD: README,v 1.4 2014/11/05 15:42:09 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Basic configuration
+===================
+
+Smokeping is split into two main parts, the daemon (running the probes
+and updating RRD files) and the part responsible for generating website
+graphs.
+
+Edit ${SYSCONFDIR}/smokeping/config (at least add some hosts to
+monitor) and enable the daemon:
+
+    rcctl enable smokeping
+    rcctl start smokeping
+
+The simplest method to generate graphs is as static HTML and images.
+There is no possibility to zoom into graphs interactively from the
+browser, but it is easy to configure and might be quite acceptable.
+Do this by running 'smokeping --static=/path/to/html-dir' from cron.
+
+Alternatively it will run as a CGI/FastCGI script with a web server.
+Smokeping itself doesn't work well with a chroot jail, but the script
+can be run as a persistant process outside the jail, and communicate
+with a chroot'ed webserver via FastCGI. The included smokeping_fcgi
+rc script will start Smokeping ready to communicate over a FastCGI
+UNIX socket /var/www/run/smokeping.sock. If you wish to use this
+method, enable this:
+
+    rcctl enable smokeping_fcgi
+    rcctl start smokeping_fcgi
+
+And configure your web server to access it - here is a sample
+configuration section for use with nginx:
+
+    location ~ /smokeping/smokeping.cgi$ {
+	fastcgi_pass	unix:run/smokeping.sock;
+	fastcgi_split_path_info ^(/cgi-bin/[^/]+)(.*);
+	fastcgi_param	PATH_INFO $fastcgi_path_info;
+	fastcgi_param	SCRIPT_FILENAME $fastcgi_script_name;
+	include		fastcgi_params;
+    }
+
+Other probe types
+=================
+
+Smokeping is commonly used to perform ICMP monitoring using fping,
+but also includes probes to monitor other protocols. Some require
+additional dependencies:
+
+ RADIUS:	   p5-Authen-Radius
+ TelnetIOSPing:	   p5-Net-Telnet
+ OpenSSHEOSPing:   p5-Net-OpenSSH, p5-IO-Pty
+ OpenSSHJunOSPing: p5-Net-OpenSSH, p5-IO-Pty
+ AnotherDNS:	   p5-Net-DNS
+ LDAP:		   p5-ldap, p5-IO-Socket-SSL

@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_pre_in,v 1.2 2014/12/19 20:32:07 rpointel Exp $
+--- Makefile.pre.in.orig	Wed Oct  8 10:18:14 2014
++++ Makefile.pre.in	Sun Dec 14 10:06:49 2014
+@@ -611,7 +611,7 @@ gdbhooks: $(BUILDPYTHON)-gdb.py
+ 
+ SRC_GDB_HOOKS=$(srcdir)/Tools/gdb/libpython.py
+ $(BUILDPYTHON)-gdb.py: $(SRC_GDB_HOOKS)
+-	$(INSTALL_DATA) $(SRC_GDB_HOOKS) $(BUILDPYTHON)-gdb.py
++	cp $(SRC_GDB_HOOKS) $(BUILDPYTHON)-gdb.py
+ 
+ # This rule is here for OPENSTEP/Rhapsody/MacOSX. It builds a temporary
+ # minimal framework (not including the Lib directory and such) in the current

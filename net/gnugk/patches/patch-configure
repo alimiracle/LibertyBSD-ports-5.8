@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.19 2015/07/11 08:00:39 ajacoutot Exp $
+--- configure.orig	Fri Jul 10 12:13:36 2015
++++ configure	Sat Jul 11 09:07:49 2015
+@@ -5069,7 +5069,7 @@ else
+ fi
+ 
+ 
+-PTLIBSNMPSUPPORT=`cat ${PTLIBDIR}/include/ptbuildopts.h | grep 'define P_SNMP'`
++PTLIBSNMPSUPPORT=`cat ${PTLIBDIR}/make/ptbuildopts.mak | grep 'define P_SNMP'`
+ if test "${PTLIBSNMPSUPPORT:-unset}" = "unset" ; then
+ 	if test "x${ptlibsnmp}" != "xno" ; then
+ 		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: No PTLib SNMP support available" >&5

@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.2 2015/07/19 04:41:17 jturner Exp $
+include/kcgi.h
+include/kcgihtml.h
+include/kcgijson.h
+include/kcgixml.h
+lib/libkcgi.a
+lib/libkcgihtml.a
+lib/libkcgijson.a
+lib/libkcgixml.a
+@man man/man3/kcgi.3
+@man man/man3/kcgi_regress.3
+@man man/man3/kcgihtml.3
+@man man/man3/kcgijson.3
+@man man/man3/kcgixml.3
+@man man/man3/khttp_body.3
+@man man/man3/khttp_fcgi_free.3
+@man man/man3/khttp_fcgi_init.3
+@man man/man3/khttp_fcgi_parse.3
+@man man/man3/khttp_free.3
+@man man/man3/khttp_head.3
+@man man/man3/khttp_parse.3
+@man man/man3/khttp_template.3
+@man man/man3/khttp_write.3
+@man man/man3/kmalloc.3
+@man man/man3/kutil_urlencode.3
+@man man/man3/kvalid_string.3
+@man man/man8/kfcgi.8
+share/kcgi/
+share/kcgi/sample-fcgi.c
+share/kcgi/sample.c
+share/kcgi/template.xml

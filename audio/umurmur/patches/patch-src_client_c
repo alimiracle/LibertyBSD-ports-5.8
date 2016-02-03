@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_client_c,v 1.7 2015/06/12 09:50:42 dcoppa Exp $
+--- src/client.c.orig	Tue Apr  7 12:01:12 2015
++++ src/client.c	Fri Jun 12 11:05:38 2015
+@@ -28,6 +28,7 @@
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+    */
++#include <sys/types.h>
+ #include <sys/poll.h>
+ #include <sys/socket.h>
+ #include <fcntl.h>
+@@ -203,7 +204,7 @@ void Client_token_free(client_t *client)
+ void recheckCodecVersions(client_t *connectingClient)
+ {
+ 	client_t *client_itr = NULL;
+-	int max = 0, version, current_version;
++	int max = 0, version = 0, current_version = 0;
+ 	int users = 0, opus = 0;
+ 	message_t *sendmsg;
+ 	struct dlist codec_list, *itr, *save;
+@@ -686,7 +687,7 @@ void Client_textmessage(client_t *client, char *text)
+ 	sendmsg->payload.textMessage->message = message;
+ 	sendmsg->payload.textMessage->n_tree_id = 1;
+ 	sendmsg->payload.textMessage->tree_id = tree_id;
+-	strcpy(message, text);
++	strlcpy(message, text, strlen(text) + 1);
+ 	Client_send_message(client, sendmsg);
+ }
+ 

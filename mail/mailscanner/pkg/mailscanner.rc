@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: mailscanner.rc,v 1.2 2015/07/15 20:45:24 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/bin/check_mailscanner"
+
+. /etc/rc.d/rc.subr
+
+pexp="perl: MailScanner: (master|killing|starting) .*"
+
+rc_cmd $1

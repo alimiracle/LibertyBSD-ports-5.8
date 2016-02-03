@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.2 2015/06/08 09:17:04 czarkoff Exp $
+${MODGO_PACKAGES}/golang.org/
+${MODGO_PACKAGES}/golang.org/x/
+${MODGO_PACKAGES}/golang.org/x/net/
+${MODGO_PACKAGES}/golang.org/x/net/websocket.a
+${MODGO_SOURCES}/golang.org/
+${MODGO_SOURCES}/golang.org/x/
+${MODGO_SOURCES}/golang.org/x/net/
+${MODGO_SOURCES}/golang.org/x/net/websocket/
+${MODGO_SOURCES}/golang.org/x/net/websocket/client.go
+${MODGO_SOURCES}/golang.org/x/net/websocket/exampledial_test.go
+${MODGO_SOURCES}/golang.org/x/net/websocket/examplehandler_test.go
+${MODGO_SOURCES}/golang.org/x/net/websocket/hybi.go
+${MODGO_SOURCES}/golang.org/x/net/websocket/hybi_test.go
+${MODGO_SOURCES}/golang.org/x/net/websocket/server.go
+${MODGO_SOURCES}/golang.org/x/net/websocket/websocket.go
+${MODGO_SOURCES}/golang.org/x/net/websocket/websocket_test.go

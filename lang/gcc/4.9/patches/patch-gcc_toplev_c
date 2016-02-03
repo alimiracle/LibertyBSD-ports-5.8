@@ -1,0 +1,12 @@
+$OpenBSD: patch-gcc_toplev_c,v 1.2 2014/11/20 19:54:40 pascal Exp $
+--- gcc/toplev.c.orig	Thu Oct 16 15:49:11 2014
++++ gcc/toplev.c	Fri Oct 31 11:59:54 2014
+@@ -1546,6 +1546,8 @@ process_options (void)
+ 
+   /* Targets must be able to place spill slots at lower addresses.  If the
+      target already uses a soft frame pointer, the transition is trivial.  */
++  if (flag_stack_protect == -1)
++    flag_stack_protect = FRAME_GROWS_DOWNWARD ? 3 : 0;
+   if (!FRAME_GROWS_DOWNWARD && flag_stack_protect)
+     {
+       warning (0, "-fstack-protector not supported for this target");

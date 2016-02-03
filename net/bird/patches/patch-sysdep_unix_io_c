@@ -1,0 +1,20 @@
+$OpenBSD: patch-sysdep_unix_io_c,v 1.2 2015/04/23 22:39:28 sthen Exp $
+--- sysdep/unix/io.c.orig	Wed Apr 22 15:41:44 2015
++++ sysdep/unix/io.c	Wed Apr 22 20:50:58 2015
+@@ -261,7 +261,7 @@ tm_start(timer *t, unsigned after)
+   bird_clock_t when;
+ 
+   if (t->randomize)
+-    after += random() % (t->randomize + 1);
++    after += arc4random_uniform(t->randomize + 1);
+   when = now + after;
+   if (t->expires == when)
+     return;
+@@ -2038,7 +2038,6 @@ io_init(void)
+   init_times();
+   update_times();
+   boot_time = now;
+-  srandom((int) now_real);
+ }
+ 
+ static int short_loops = 0;

@@ -1,0 +1,46 @@
+$OpenBSD: patch-installer_linux_ical_cfg,v 1.4 2015/04/05 22:25:08 robert Exp $
+--- installer/linux/ical.cfg.orig	Thu Mar  5 16:52:42 2015
++++ installer/linux/ical.cfg	Sun Apr  5 23:30:17 2015
+@@ -2,16 +2,16 @@
+ # ICAL SETTINGS
+ 
+ # drop privileges and run the process as this user
+-run_as_user = 
++run_as_user = _zarafa
+ 
+ # drop privileges and run the process as this group
+-run_as_group = 
++run_as_group = _zarafa
+ 
+-# create a pid file for stopping the service via the init.d scripts
++# write the process ID number to this file
+ pid_file = /var/run/zarafa-ical.pid
+ 
+ # run server in this path (when not using the -F switch)
+-running_path = /
++running_path = /var/empty
+ 
+ # IP Address to bind to (0.0.0.0 for ANY)
+ server_bind = 0.0.0.0
+@@ -33,7 +33,7 @@ icals_port = 8443
+ server_socket = http://localhost:236/zarafa
+ 
+ # Process model, using pthreads (thread) or processes (fork)
+-process_model = fork
++process_model = thread
+ 
+ ##############################################################
+ # ICAL LOG SETTINGS
+@@ -54,10 +54,10 @@ log_timestamp = 1
+ # ICAL SSL SETTINGS FOR INCOMING CONNECTIONS
+ 
+ # File with RSA key for SSL
+-ssl_private_key_file = /etc/zarafa/ical/privkey.pem
++ssl_private_key_file = ${SYSCONFDIR}/zarafa/ical/privkey.pem
+ 
+ # File with certificate for SSL
+-ssl_certificate_file = /etc/zarafa/ical/cert.pem
++ssl_certificate_file = ${SYSCONFDIR}/zarafa/ical/cert.pem
+ 
+ # Verify client certificate
+ ssl_verify_client = no

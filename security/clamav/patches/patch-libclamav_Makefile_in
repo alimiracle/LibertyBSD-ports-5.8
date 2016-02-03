@@ -1,0 +1,13 @@
+$OpenBSD: patch-libclamav_Makefile_in,v 1.24 2015/04/29 21:27:39 sthen Exp $
+--- libclamav/Makefile.in.orig	Thu Apr 23 17:02:34 2015
++++ libclamav/Makefile.in	Wed Apr 29 14:49:54 2015
+@@ -3379,6 +3379,9 @@ version.h: version.h.tmp
+ 	fi
+ 
+ version.h.tmp:
++	touch version.h.tmp
++
++NOT-version.h.tmp:
+ 	$(AM_V_GEN) test -f version.h || touch version.h;\
+ 	rm -f $@;\
+ 	REVISION="$$(LANG=C cd "$(top_srcdir)"; git describe --always 2>/dev/null || echo "exported")";\

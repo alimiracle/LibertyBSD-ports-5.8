@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.4 2015/07/16 23:57:24 ajacoutot Exp $
+${P5ARCH}/
+${P5ARCH}/Unix/
+${P5ARCH}/Unix/Mknod.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Unix/
+${P5ARCH}/auto/Unix/Mknod/
+${P5ARCH}/auto/Unix/Mknod/Mknod.so
+@man man/man3p/Unix::Mknod.3p

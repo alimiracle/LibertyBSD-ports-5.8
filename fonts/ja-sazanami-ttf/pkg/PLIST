@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:10 ajacoutot Exp $
+@pkgpath japanese/sazanami-ttf
+share/fonts/
+@fontdir share/fonts/sazanami/
+share/fonts/sazanami/sazanami-gothic.ttf
+share/fonts/sazanami/sazanami-mincho.ttf

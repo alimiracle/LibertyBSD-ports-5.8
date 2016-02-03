@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.23 2015/04/05 22:25:08 robert Exp $
+--- doc/Makefile.in.orig	Thu Mar  5 16:52:52 2015
++++ doc/Makefile.in	Fri Apr  3 23:11:10 2015
+@@ -658,7 +658,7 @@ $(BUILT_SOURCES): manual.xml
+ 	@if [ -z $(PROG_XMLTO) ]; then \
+ 		echo Please install xmlto to generate manual pages; \
+ 	else \
+-		LC_ALL=en_US.UTF-8 $(PROG_XMLTO) man ${top_srcdir}/doc/manual.xml; \
++		LC_ALL=C $(PROG_XMLTO) man ${top_srcdir}/doc/manual.xml; \
+ 	fi
+ 
+ # force allpages to wait on output from xmlto

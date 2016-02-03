@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_app_list_app_list_constants_h,v 1.7 2015/07/23 13:44:04 robert Exp $
+--- ui/app_list/app_list_constants.h.orig.port	Wed Jul 15 22:30:08 2015
++++ ui/app_list/app_list_constants.h	Wed Jul 22 08:37:30 2015
+@@ -85,7 +85,7 @@ APP_LIST_EXPORT extern const char kSearchResultOpenDis
+ APP_LIST_EXPORT extern const char kSearchQueryLength[];
+ APP_LIST_EXPORT extern const char kSearchResultDistanceFromOrigin[];
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ // The WM_CLASS name for the app launcher window on Linux.
+ APP_LIST_EXPORT extern const char kAppListWMClass[];
+ #endif

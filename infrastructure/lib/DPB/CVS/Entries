@@ -1,0 +1,38 @@
+/AffinityStub.pm/1.1/Sun Oct 13 18:23:35 2013//
+/Heuristics.pm/1.31/Thu Oct 17 08:12:28 2013//
+/Serialize.pm/1.1/Sat Nov 16 16:39:28 2013//
+D/Core////
+D/Heuristics////
+D/Job////
+D/PortBuilder////
+D/Reporter////
+D/SubEngine////
+/MiniCurses.pm/1.7/Sun Mar  9 23:18:29 2014//
+/BasePkgPath.pm/1.6/Sun Dec  7 18:35:20 2014//
+/Job.pm/1.10/Sun Dec  7 18:35:20 2014//
+/Util.pm/1.6/Thu Apr 16 17:36:55 2015//
+/Reporter.pm/1.27/Thu May  7 17:37:57 2015//
+/Affinity.pm/1.17/Sun May 10 17:38:29 2015//
+/Grabber.pm/1.30/Sun May 10 17:38:29 2015//
+/Limiter.pm/1.7/Sun May 10 17:38:29 2015//
+/Signature.pm/1.9/Sun May 10 17:38:29 2015//
+/Core.pm/1.82/Wed May 13 07:40:28 2015//
+/Host.pm/1.7/Wed May 13 17:37:45 2015//
+/Clock.pm/1.7/Mon May 18 17:49:56 2015//
+/Logger.pm/1.24/Tue May 26 07:39:57 2015//
+/Engine.pm/1.113/Wed Jun 17 17:39:05 2015//
+/Fetch.pm/1.72/Wed Jun 17 17:39:05 2015//
+/Distfile.pm/1.8/Mon Jun 22 17:38:31 2015//
+/ErrorList.pm/1.4/Mon Jun 22 17:38:31 2015//
+/SubEngine.pm/1.25/Mon Jun 22 17:38:31 2015//
+/Locks.pm/1.36/Tue Jun 23 17:38:01 2015//
+/PortInfo.pm/1.36/Tue Jun 23 17:38:01 2015//
+/HostProperties.pm/1.14/Thu Jul  2 17:39:20 2015//
+/PkgPath.pm/1.51/Thu Jul  2 17:39:20 2015//
+/Trace.pm/1.1/Wed Jul 15 14:30:27 2015//
+/User.pm/1.19/Wed Jul 15 17:40:57 2015//
+/PortBuilder.pm/1.73/Tue Jul 21 07:44:38 2015//
+/Shell.pm/1.17/Tue Jul 21 07:44:38 2015//
+/Config.pm/1.56/Tue Jul 28 07:45:02 2015//
+/Vars.pm/1.45/Tue Jul 28 07:45:02 2015//
+/State.pm/1.14/Tue Jul 28 17:40:25 2015//

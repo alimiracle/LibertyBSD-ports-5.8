@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.5 2015/07/07 13:44:55 sthen Exp $
+${P5ARCH}/
+${P5ARCH}/Crypt/
+${P5ARCH}/Crypt/OpenSSL/
+${P5ARCH}/Crypt/OpenSSL/Random.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Crypt/
+${P5ARCH}/auto/Crypt/OpenSSL/
+${P5ARCH}/auto/Crypt/OpenSSL/Random/
+${P5ARCH}/auto/Crypt/OpenSSL/Random/Random.so
+@man man/man3p/Crypt::OpenSSL::Random.3p

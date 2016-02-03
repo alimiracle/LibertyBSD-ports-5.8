@@ -1,0 +1,4 @@
+This package provides the ISC libbind DNS resolver. It is not for general
+purpose use and has known issues; it is intended *only* for special cases
+where software relies on resolver internals and cannot be easily adapted
+to the standard resolver in libc.

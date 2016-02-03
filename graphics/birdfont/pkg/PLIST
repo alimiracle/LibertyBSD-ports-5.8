@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.16 2015/06/23 00:20:35 bcallah Exp $
+@bin bin/birdfont
+@bin bin/birdfont-autotrace
+@bin bin/birdfont-export
+@bin bin/birdfont-import
+@lib lib/libbirdfont.so.${LIBbirdfont_VERSION}
+@lib lib/libbirdgems.so.${LIBbirdgems_VERSION}
+@man man/man1/birdfont-autotrace.1
+@man man/man1/birdfont-export.1
+@man man/man1/birdfont-import.1
+@man man/man1/birdfont.1
+share/appdata/
+share/appdata/birdfont.appdata.xml
+share/applications/birdfont.desktop
+share/birdfont/
+share/birdfont/birdfont_window_icon.png
+share/birdfont/bright.theme
+share/birdfont/codepages.sqlite
+share/birdfont/dark.theme
+share/birdfont/high_contrast.theme
+share/birdfont/icons.bf
+share/birdfont/key_bindings.xml
+share/birdfont/ucd.sqlite
+share/icons/hicolor/128x128/apps/birdfont.png
+share/icons/hicolor/256x256/apps/birdfont.png
+share/icons/hicolor/48x48/apps/birdfont.png
+share/locale/sv/LC_MESSAGES/birdfont.mo
+share/mime/packages/birdfont.xml
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

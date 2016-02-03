@@ -1,0 +1,12 @@
+$OpenBSD: patch-net_net_gypi,v 1.9 2015/07/23 13:44:04 robert Exp $
+--- net/net.gypi.orig.port	Wed Jul 15 22:30:05 2015
++++ net/net.gypi	Wed Jul 22 08:37:30 2015
+@@ -196,8 +196,6 @@
+       'android/network_change_notifier_factory_android.h',
+       'android/network_library.cc',
+       'android/network_library.h',
+-      'base/address_tracker_linux.cc',
+-      'base/address_tracker_linux.h',
+       'base/backoff_entry.cc',
+       'base/backoff_entry.h',
+       'base/backoff_entry_serializer.cc',

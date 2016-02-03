@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:56 naddy Exp $
+include/lrdf.h
+include/lrdf_types.h
+lib/liblrdf.a
+lib/liblrdf.la
+@lib lib/liblrdf.so.${LIBlrdf_VERSION}
+lib/pkgconfig/lrdf.pc
+share/ladspa/
+share/ladspa/rdf/
+share/ladspa/rdf/ladspa.rdfs

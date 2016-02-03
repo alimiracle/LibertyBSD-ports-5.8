@@ -1,0 +1,44 @@
+# $OpenBSD: Makefile,v 1.11 2015/05/14 16:38:10 sthen Exp $
+
+COMMENT =	fetch and update unofficial signatures for ClamAV
+
+V =		4.1.0
+DISTNAME =	clamav-unofficial-sigs-$V
+DISTFILES =	${DISTNAME}{$V}.tar.gz
+
+CATEGORIES =	security mail
+
+MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
+
+HOMEPAGE =	https://github.com/extremeshok/clamav-unofficial-sigs
+
+# BSD
+PERMIT_PACKAGE_CDROM =	 Yes
+
+MASTER_SITES =	https://github.com/extremeshok/clamav-unofficial-sigs/archive/
+
+RUN_DEPENDS =	net/curl \
+		net/rsync \
+		security/clamav \
+		security/gnupg
+
+NO_BUILD =	Yes
+NO_TEST =	Yes
+
+PKG_ARCH =	*
+
+do-configure:
+	${SUBST_CMD} ${WRKSRC}/clamav-unofficial-sigs.conf
+	perl -pi -e 's,/etc,${SYSCONFDIR},' ${WRKSRC}/clamav-unofficial-sigs.sh
+# simple perl re replace; if we used SUBST_CMD for this one we'd need to
+# patch a line next to a version number which makes updating a pain
+
+do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/clamav-unofficial-sigs
+	cd ${WRKSRC}; \
+	${INSTALL_SCRIPT} clamav-unofficial-sigs.sh ${PREFIX}/bin; \
+	${INSTALL_DATA} clamav-unofficial-sigs.conf \
+	    ${PREFIX}/share/examples/clamav-unofficial-sigs; \
+	${INSTALL_MAN} clamav-unofficial-sigs.8 ${PREFIX}/man/man8
+
+.include <bsd.port.mk>

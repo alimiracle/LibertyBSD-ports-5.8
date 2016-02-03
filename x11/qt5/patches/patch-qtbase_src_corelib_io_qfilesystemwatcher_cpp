@@ -1,0 +1,13 @@
+$OpenBSD: patch-qtbase_src_corelib_io_qfilesystemwatcher_cpp,v 1.2 2015/04/19 13:18:28 zhuk Exp $
+Enable kqueue(2) backend.
+--- qtbase/src/corelib/io/qfilesystemwatcher.cpp.ports.orig	Tue Feb 17 07:56:51 2015
++++ qtbase/src/corelib/io/qfilesystemwatcher.cpp	Wed Apr  8 00:38:30 2015
+@@ -52,7 +52,7 @@
+ #  include "qfilesystemwatcher_win_p.h"
+ #elif defined(USE_INOTIFY)
+ #  include "qfilesystemwatcher_inotify_p.h"
+-#elif defined(Q_OS_FREEBSD) || defined(Q_OS_IOS) || (defined(Q_OS_OSX) && MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_7)
++#elif defined(Q_OS_FREEBSD) || defined(Q_OS_OPENBSD) || defined(Q_OS_IOS) || (defined(Q_OS_OSX) && MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_10_7)
+ #  include "qfilesystemwatcher_kqueue_p.h"
+ #elif defined(Q_OS_OSX) && MAC_OS_X_VERSION_MIN_REQUIRED > MAC_OS_X_VERSION_10_6
+ #  include "qfilesystemwatcher_fsevents_p.h"

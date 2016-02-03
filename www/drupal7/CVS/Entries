@@ -1,0 +1,43 @@
+/Makefile/1.9/Wed Jan 30 15:28:25 2013//
+/Makefile.inc/1.2/Mon Mar 11 11:44:41 2013//
+/drupal7.port.mk/1.2/Thu Apr 12 08:16:06 2012//
+D/CKeditor////
+D/abt////
+D/alternate_login////
+D/auto_nodetitle////
+D/backup_migrate////
+D/colorbox////
+D/compact_forms////
+D/content_access////
+D/core////
+D/ctools////
+D/date////
+D/devel////
+D/disable_messages////
+D/entity////
+D/genpass////
+D/globalredirect////
+D/google_analytics////
+D/jquery_plugin////
+D/locale-fr////
+D/locale-nl////
+D/masquerade////
+D/nodeaccess_userreference////
+D/nodesinblock////
+D/pathauto////
+D/printer-friendly////
+D/references////
+D/rules////
+D/scheduler////
+D/schema////
+D/securelogin////
+D/slideshow_creator////
+D/theme-adaptivetheme////
+D/theme-atcommerce////
+D/theme-danland////
+D/theme-newsflash////
+D/token////
+D/ubercart////
+D/user_readonly////
+D/views////
+D/webform////

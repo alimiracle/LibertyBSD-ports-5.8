@@ -1,0 +1,25 @@
+$OpenBSD: patch-gkrellsun_c,v 1.5 2015/06/26 18:27:33 ajacoutot Exp $
+--- gkrellsun.c.orig	Fri Jun 26 20:21:26 2015
++++ gkrellsun.c	Fri Jun 26 20:24:21 2015
+@@ -1388,8 +1388,8 @@ setTextColor_cb(/*@unused@*/GtkWidget *widget, /*@unus
+    GdkColor color;
+    gint response;
+ 
+-   gint whichTime = (gint)data % 10;
+-   gint whichSun = (gint)data / 10;
++   gint whichTime = (glong)data % 10;
++   gint whichSun = (glong)data / 10;
+ 
+    w = gtk_color_selection_dialog_new(_("Pick a color"));
+ 
+@@ -1459,8 +1459,8 @@ sun_create_tab(GtkWidget *tab_vbox)
+    GtkWidget     *ll_vbox, *ll_frame;
+    GtkWidget     *long_hbox, *lat_hbox;
+    GtkWidget     *table1;
+-   gint time;
+-   guint sun;
++   glong time;
++   gulong sun;
+    GtkWidget *font_button;
+    guint x;
+    GtkSizeGroup *ll_size_group;

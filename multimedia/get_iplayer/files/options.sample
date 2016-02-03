@@ -1,0 +1,13 @@
+# $OpenBSD: options.sample,v 1.5 2015/07/06 13:49:49 sthen Exp $
+
+# don't ask about removing old files
+#nopurge 1
+
+# save subtitles too
+#subtitles 1
+
+# default to this directory
+#output /share/iplayer
+
+#tvmode hlsbest,best
+#radiomode hlsbest,best

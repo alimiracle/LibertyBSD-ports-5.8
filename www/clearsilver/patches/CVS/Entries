@@ -1,0 +1,19 @@
+/patch-cgi_Makefile/1.2/Mon May 15 17:08:43 2006//
+/patch-cgi_cgi_c/1.4/Tue Nov 18 20:00:09 2008//
+/patch-cgi_cgi_h/1.4/Tue Nov 18 20:00:09 2008//
+/patch-cgi_cgiwrap_c/1.3/Tue Nov 18 20:00:09 2008//
+/patch-cgi_date_h/1.2/Mon May 15 17:08:43 2006//
+/patch-cgi_html_c/1.4/Tue Nov 18 20:00:09 2008//
+/patch-cs_Makefile/1.2/Mon May 15 17:08:43 2006//
+/patch-cs_csparse_c/1.6/Tue Nov 18 20:00:09 2008//
+/patch-perl_Makefile_PL/1.4/Wed Feb 14 17:42:32 2007//
+/patch-python_setup_py/1.4/Tue Nov 18 20:00:09 2008//
+/patch-rules_mk_in/1.3/Sun Sep 23 19:50:22 2012//
+/patch-util_Makefile/1.2/Mon May 15 17:08:43 2006//
+/patch-util_filter_h/1.4/Tue Nov 18 20:00:09 2008//
+/patch-util_neo_date_h/1.2/Mon May 15 17:08:43 2006//
+/patch-util_neo_err_h/1.4/Tue Nov 18 20:00:09 2008//
+/patch-util_neo_hdf_c/1.4/Tue Nov 18 20:00:09 2008//
+/patch-util_neo_str_c/1.4/Tue Nov 18 20:00:09 2008//
+/patch-util_rcfs_h/1.2/Mon May 15 17:08:43 2006//
+D

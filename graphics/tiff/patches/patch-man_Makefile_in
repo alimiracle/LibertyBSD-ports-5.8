@@ -1,0 +1,15 @@
+$OpenBSD: patch-man_Makefile_in,v 1.14 2015/07/08 19:36:54 naddy Exp $
+
+Replace .3tiff man page suffix with standard .3
+
+--- man/Makefile.in.orig	Sun Jun 21 21:07:54 2015
++++ man/Makefile.in	Wed Jul  8 21:08:06 2015
+@@ -498,7 +498,7 @@ install-man3: $(dist_man3_MANS)
+ 	  if test -f $$p; then d=; else d="$(srcdir)/"; fi; \
+ 	  echo "$$d$$p"; echo "$$p"; \
+ 	done | \
+-	sed -e 'n;s,.*/,,;p;h;s,.*\.,,;s,^[^3][0-9a-z]*$$,3,;x' \
++	sed -e 'n;s,.*/,,;p;h;s,.*\.,,;s,^.[0-9a-z]*$$,3,;x' \
+ 	      -e 's,\.[0-9a-z]*$$,,;$(transform);G;s,\n,.,' | \
+ 	sed 'N;N;s,\n, ,g' | { \
+ 	list=; while read file base inst; do \

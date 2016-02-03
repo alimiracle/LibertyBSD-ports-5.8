@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_flow6_c,v 1.2 2015/04/28 23:16:20 bluhm Exp $
+--- tools/flow6.c.orig	Sun Apr  5 16:00:06 2015
++++ tools/flow6.c	Mon Apr 27 22:59:14 2015
+@@ -681,7 +681,7 @@ int send_fid_probe(void){
+ 		dlt_null->family= PF_INET6;
+ 	}
+ #if defined (__OpenBSD__)
+-	else if(idata->type == DLT_LOOP){
++	else if(idata.type == DLT_LOOP){
+ 		dlt_null->family= htonl(PF_INET6);
+ 	}
+ #endif

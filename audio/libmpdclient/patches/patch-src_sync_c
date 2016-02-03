@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_sync_c,v 1.2 2015/03/17 15:59:48 dcoppa Exp $
+--- src/sync.c.orig	Mon Feb 23 15:50:40 2015
++++ src/sync.c	Tue Mar 17 10:52:58 2015
+@@ -36,6 +36,7 @@
+ #ifndef WIN32
+ #include <sys/select.h>
+ #endif
++#include <string.h>
+ #include <fcntl.h>
+ #include <unistd.h>
+ 

@@ -1,0 +1,12 @@
+/patch-common_mk/1.2/Tue Nov 15 00:05:16 2011//
+/patch-ext_dl_sym_c/1.1/Thu Sep 23 21:58:50 2010//
+/patch-ext_openssl_openssl_missing_h/1.1/Thu Sep 23 21:58:50 2010//
+/patch-ext_socket_socket_c/1.2/Tue Sep 18 16:02:53 2012//
+/patch-lib_fileutils_rb/1.1/Tue Oct 12 15:39:06 2010//
+/patch-util_c/1.1/Sun Nov 24 02:27:08 2013//
+/patch-lib_rexml_entity_rb/1.1/Sat Nov  1 04:56:40 2014//
+/patch-lib_rexml_document_rb/1.2/Fri Nov 14 18:34:54 2014//
+/patch-configure/1.4/Thu Apr 16 07:41:29 2015//
+/patch-ext_openssl_lib_openssl_ssl-internal_rb/1.2/Thu Apr 16 07:41:29 2015//
+/patch-test_openssl_test_ssl_rb/1.1/Wed Apr 15 21:58:16 2015//
+D

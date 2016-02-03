@@ -1,0 +1,15 @@
+$OpenBSD: patch-daemon_gdm-launch-environment_c,v 1.5 2015/04/15 07:25:46 ajacoutot Exp $
+
+XXX fix+push upstream
+
+--- daemon/gdm-launch-environment.c.orig	Fri Apr 10 21:13:44 2015
++++ daemon/gdm-launch-environment.c	Wed Apr 15 09:18:13 2015
+@@ -50,7 +50,7 @@
+ #include "gdm-settings-direct.h"
+ #include "gdm-settings-keys.h"
+ 
+-#define INITIAL_SETUP_USERNAME "gnome-initial-setup"
++#define INITIAL_SETUP_USERNAME "_gnome-initial-setup"
+ #define GNOME_SESSION_SESSIONS_PATH DATADIR "/gnome-session/sessions"
+ 
+ extern char **environ;

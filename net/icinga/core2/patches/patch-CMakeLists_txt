@@ -1,0 +1,25 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.5 2015/05/12 09:37:03 sthen Exp $
+
+use FindBacktrace.cmake (added in cmake 3)
+
+--- CMakeLists.txt.orig	Thu Mar 12 12:27:11 2015
++++ CMakeLists.txt	Thu Mar 12 15:04:13 2015
+@@ -179,15 +179,14 @@ set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -DI2_D
+ set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DI2_DEBUG")
+ 
+ check_function_exists(vfork HAVE_VFORK)
+-check_function_exists(backtrace_symbols HAVE_BACKTRACE_SYMBOLS)
+ check_function_exists(pipe2 HAVE_PIPE2)
+ check_function_exists(nice HAVE_NICE)
+ check_library_exists(dl dladdr "dlfcn.h" HAVE_DLADDR)
+-check_library_exists(execinfo backtrace_symbols "" HAVE_LIBEXECINFO)
+ check_include_file_cxx(cxxabi.h HAVE_CXXABI_H)
+ 
+-if(HAVE_LIBEXECINFO)
+-  set(HAVE_BACKTRACE_SYMBOLS TRUE)
++find_package(Backtrace)
++if(Backtrace_FOUND)
++  include_directories(${Backtrace_INCLUDE_DIRS})
+ endif()
+ 
+ configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h ESCAPE_QUOTES)

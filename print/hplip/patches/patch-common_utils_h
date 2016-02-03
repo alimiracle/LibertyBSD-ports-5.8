@@ -1,0 +1,12 @@
+$OpenBSD: patch-common_utils_h,v 1.2 2015/04/17 04:18:13 ajacoutot Exp $
+--- common/utils.h.orig	Tue Apr 14 11:53:06 2015
++++ common/utils.h	Fri Apr 17 05:53:22 2015
+@@ -23,7 +23,7 @@
+ #define SCAN_PLUGIN_SOAP "bb_soap.so"
+ #define SCAN_PLUGIN_SOAPHT "bb_soapht.so"
+ 
+-#define HPLIP_PLUGIN_STATE  "/var/lib/hp/hplip.state"
++#define HPLIP_PLUGIN_STATE  "/var/db/hp/hplip.state"
+ #define CUPS_TMP_DIR   getenv("TMPDIR") ? : getenv("HOME") ?:"/tmp"
+ 
+ enum UTILS_CONF_RESULT

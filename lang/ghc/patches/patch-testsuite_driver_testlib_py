@@ -1,0 +1,33 @@
+$OpenBSD: patch-testsuite_driver_testlib_py,v 1.6 2014/11/22 20:23:23 kili Exp $
+--- testsuite/driver/testlib.py.orig	Thu Jul 10 06:27:16 2014
++++ testsuite/driver/testlib.py	Sun Nov  2 22:08:03 2014
+@@ -1604,6 +1604,13 @@ def compare_outputs( kind, normaliser, expected_file, 
+     actual_raw = read_no_crs(actual_file)
+     actual_str = normaliser(actual_raw)
+ 
++    # Strip OpenBSDs linker warnings about strcpy(3) & friends.
++    if config.os == 'openbsd':
++        actual_str = re.sub('.*: In function .*:\n+(.*:[0-9]+:[0-9]+:\n)?:? *warning: .* is .* misused, please use .*\n',
++                            '', actual_str)
++        actual_str = re.sub('.*/libgmp\.so\.[0-9]*\.[0-9]*: warning: .* is .* misused, please use .*\n',
++                            '', actual_str)
++
+     if expected_str == actual_str:
+         return 1
+     else:
+@@ -1627,13 +1634,13 @@ def compare_outputs( kind, normaliser, expected_file, 
+         # This does mean that the diff might contain changes that
+         # would be normalised away.
+         if (config.verbose >= 1):
+-            r = os.system( 'diff -uw ' + expected_file_for_diff + \
++            r = os.system( 'diff -auw ' + expected_file_for_diff + \
+                                    ' ' + actual_file )
+ 
+             # If for some reason there were no non-whitespace differences,
+             # then do a full diff
+             if r == 0:
+-                r = os.system( 'diff -u ' + expected_file_for_diff + \
++                r = os.system( 'diff -au ' + expected_file_for_diff + \
+                                       ' ' + actual_file )
+ 
+         if config.accept:

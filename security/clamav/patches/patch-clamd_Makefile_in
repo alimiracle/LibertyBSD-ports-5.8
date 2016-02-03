@@ -1,0 +1,14 @@
+$OpenBSD: patch-clamd_Makefile_in,v 1.18 2015/04/29 21:27:39 sthen Exp $
+--- clamd/Makefile.in.orig	Thu Apr 23 17:02:34 2015
++++ clamd/Makefile.in	Wed Apr 29 14:49:54 2015
+@@ -253,7 +253,9 @@ JSON_LDFLAGS = @JSON_LDFLAGS@
+ JSON_LIBS = @JSON_LIBS@
+ LCOV = @LCOV@
+ LD = @LD@
+-LDFLAGS = @LDFLAGS@
++# Do not generate "LDFLAGS = -L/usr/local/lib" to build on systems that have
++# have an older libclamav installed.
++# LDFLAGS = @LDFLAGS@
+ LIBADD_DL = @LIBADD_DL@
+ LIBADD_DLD_LINK = @LIBADD_DLD_LINK@
+ LIBADD_DLOPEN = @LIBADD_DLOPEN@

@@ -1,0 +1,14 @@
+$OpenBSD: patch-common_ECLogger_h,v 1.5 2015/04/05 22:25:08 robert Exp $
+--- common/ECLogger.h.orig	Thu Mar  5 16:54:04 2015
++++ common/ECLogger.h	Fri Apr  3 23:11:10 2015
+@@ -121,8 +121,10 @@ class ECLogger { (protected)
+ 	unsigned int max_loglevel;
+ 	char *msgbuffer;
+ 	pthread_mutex_t msgbuflock;
++#ifndef __OpenBSD__
+ 	locale_t timelocale;
+ 	locale_t datalocale;
++#endif
+ 	char timestring[_LOG_TSSIZE];
+ 	logprefix prefix;
+ 

@@ -1,0 +1,28 @@
+$OpenBSD: patch-vcl_Executable_ui-previewer_mk,v 1.2 2015/05/03 11:30:33 robert Exp $
+--- vcl/Executable_ui-previewer.mk.orig.port	Thu Mar 26 12:51:14 2015
++++ vcl/Executable_ui-previewer.mk	Mon Apr  6 15:44:15 2015
+@@ -20,6 +20,11 @@ $(eval $(call gb_Executable_use_static_libraries,ui-pr
+     vclmain \
+ ))
+ 
++$(eval $(call gb_Executable_add_libs,ui-previewer,\
++	-lharfbuzz \
++	-lharfbuzz-icu \
++))
++
+ $(eval $(call gb_Executable_use_libraries,ui-previewer,\
+ 	comphelper \
+ 	cppu \
+@@ -34,10 +39,10 @@ $(eval $(call gb_Executable_add_exception_objects,ui-p
+     vcl/source/uipreviewer/previewer \
+ ))
+ 
+-ifeq ($(OS),LINUX)
++ifneq (,$(filter LINUX OPENBSD,$(OS)))
+ $(eval $(call gb_Executable_add_libs,ui-previewer,\
+ 	-lm \
+-	-ldl \
++	$(if $(filter LINUX,$(OS)),-ldl) \
+ 	-lpthread \
+     -lGL \
+     -lGLU \

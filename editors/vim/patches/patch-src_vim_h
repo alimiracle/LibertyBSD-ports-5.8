@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_vim_h,v 1.5 2015/04/10 12:25:46 sthen Exp $
+--- src/vim.h.orig	Thu Apr  9 21:08:22 2015
++++ src/vim.h	Thu Apr  9 23:41:51 2015
+@@ -276,6 +276,7 @@
+ # include "os_beos.h"
+ # define __ARGS(x)  x
+ #endif
++#define UNUSED __attribute__((unused))
+ 
+ #if (defined(UNIX) || defined(__EMX__) || defined(VMS)) \
+ 	&& (!defined(MACOS_X) || defined(HAVE_CONFIG_H))

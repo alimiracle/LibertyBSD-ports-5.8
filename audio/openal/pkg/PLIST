@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.7 2015/05/22 11:31:11 ajacoutot Exp $
+@bin bin/makehrtf
+@bin bin/openal-info
+include/AL/
+include/AL/al.h
+include/AL/alc.h
+include/AL/alext.h
+include/AL/efx-creative.h
+include/AL/efx-presets.h
+include/AL/efx.h
+@lib lib/libopenal.so.${LIBopenal_VERSION}
+lib/pkgconfig/openal.pc
+share/examples/openal/
+@sample ${SYSCONFDIR}/openal/
+share/examples/openal/alsoftrc.sample
+@sample ${SYSCONFDIR}/openal/alsoft.conf

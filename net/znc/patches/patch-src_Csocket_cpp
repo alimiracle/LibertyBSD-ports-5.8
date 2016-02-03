@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_Csocket_cpp,v 1.2 2015/05/15 06:47:27 ajacoutot Exp $
+--- src/Csocket.cpp.orig	Thu May 14 23:10:24 2015
++++ src/Csocket.cpp	Thu May 14 23:11:00 2015
+@@ -47,6 +47,7 @@
+ #include <stdio.h>
+ #include <openssl/conf.h>
+ #include <openssl/engine.h>
++#include <openssl/comp.h>
+ #endif /* HAVE_LIBSSL */
+ 
+ #ifdef HAVE_ICU

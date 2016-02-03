@@ -1,0 +1,30 @@
+$OpenBSD: patch-poller-wrapper_py,v 1.4 2015/07/16 02:50:33 sthen Exp $
+--- poller-wrapper.py.orig	Thu Jul 16 01:06:30 2015
++++ poller-wrapper.py	Thu Jul 16 01:06:30 2015
+@@ -57,7 +57,7 @@ config_file = ob_install_dir + '/config.php'
+ 
+ 
+ def get_config_data():
+-    config_cmd = ['/usr/bin/env', 'php', '%s/config_to_json.php' % ob_install_dir]
++    config_cmd = ['%PHP%', '%s/config_to_json.php' % ob_install_dir]
+     try:
+         proc = subprocess.Popen(config_cmd, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
+     except:
+@@ -78,7 +78,7 @@ except:
+     print "ERROR: Could not load or parse configuration, are PATHs correct?"
+     sys.exit(2)
+ 
+-poller_path = config['install_dir'] + '/poller.php'
++poller_path = ob_install_dir + '/poller.php'
+ db_username = config['db_user']
+ db_password = config['db_pass']
+ 
+@@ -292,7 +292,7 @@ def poll_worker():
+ # EOC5
+             try:
+                 start_time = time.time()
+-                command = "/usr/bin/env php %s -h %s >> /dev/null 2>&1" % (poller_path, device_id)
++                command = "%PHP% %s -h %s >> /dev/null 2>&1" % (poller_path, device_id)
+                 subprocess.check_call(command, shell=True)
+                 elapsed_time = int(time.time() - start_time)
+                 print_queue.put([threading.current_thread().name, device_id, elapsed_time])

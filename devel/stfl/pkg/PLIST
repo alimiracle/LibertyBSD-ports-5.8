@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:31:14 ajacoutot Exp $
+include/stfl.h
+@lib lib/libstfl.so.${LIBstfl_VERSION}
+lib/pkgconfig/stfl.pc

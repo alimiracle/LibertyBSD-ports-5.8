@@ -1,0 +1,22 @@
+--- gif2png.c.orig	Wed Oct 29 11:16:37 2014
++++ gif2png.c	Wed Oct 29 11:35:23 2014
+@@ -140,6 +140,19 @@ static int writefile(struct GIFelement *s, struct GIFe
+     png_text software;
+     png_text comment;
+ 
++    png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
++    if (png_ptr == NULL) {
++      fprintf(stderr, "gif2png: fatal error, out of memory\n");
++      fprintf(stderr, "gif2png: exiting ungracefully\n");
++      exit(1);
++    }
++    info_ptr = png_create_info_struct(png_ptr);
++    if (info_ptr == NULL) {
++      fprintf(stderr, "gif2png: fatal error, out of memory\n");
++      fprintf(stderr, "gif2png: exiting ungracefully\n");
++      exit(1);
++    }
++
+     /* these volatile declarations prevent gcc warnings ("variable might be
+      *  clobbered by `longjmp' or `vfork'") */
+     volatile bool gray = true;

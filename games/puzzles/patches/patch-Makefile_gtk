@@ -1,0 +1,41 @@
+$OpenBSD: patch-Makefile_gtk,v 1.1 2014/12/06 23:05:11 landry Exp $
+- only use gtk-2 through pkg-config
+- dont use -Werror/-O2
+- install binaries under bin as puzzle-$i
+- generate desktop files/install icons
+--- Makefile.gtk.orig	Mon Dec  1 22:34:37 2014
++++ Makefile.gtk	Mon Dec  1 22:48:38 2014
+@@ -11,9 +11,9 @@ CC := $(TOOLPATH)$(CC)
+ # building with GTK 1.2, or you can set it to `pkg-config gtk+-2.0'
+ # if you want to enforce 2.0. The default is to try 2.0 and fall back
+ # to 1.2 if it isn't found.
+-GTK_CONFIG = sh -c 'pkg-config gtk+-2.0 $$0 2>/dev/null || gtk-config $$0'
++GTK_CONFIG = pkg-config gtk+-2.0
+ 
+-CFLAGS := -O2 -Wall -Werror -ansi -pedantic -g -I./ -Iicons/ `$(GTK_CONFIG) \
++CFLAGS := -Wall -ansi -g -I./ -Iicons/ `$(GTK_CONFIG) \
+ 		--cflags` $(CFLAGS)
+ XLIBS = `$(GTK_CONFIG) --libs` -lm
+ ULIBS = -lm#
+@@ -660,9 +660,19 @@ GAMES += unequal
+ GAMES += unruly
+ GAMES += untangle
+ install:
++	for d in 16 32 48; do \
++		$(INSTALL_DATA) -d $(DESTDIR)/$(prefix)/share/icons/hicolor/$${d}x$${d}/apps/ ; \
++	done; \
++	$(INSTALL_DATA) -d $(DESTDIR)/$(prefix)/share/applications/; \
++	$(INSTALL_DATA) -d $(DESTDIR)/$(prefix)/share/doc/puzzles/; \
++	$(INSTALL_DATA) puzzles.txt $(DESTDIR)/$(prefix)/share/doc/puzzles/; \
+ 	for i in $(GAMES); do \
+-		$(INSTALL_PROGRAM) -m 755 $(BINPREFIX)$$i $(DESTDIR)$(gamesdir)/$(BINPREFIX)$$i \
+-		|| exit 1; \
++		$(INSTALL_PROGRAM) -m 755 $(BINPREFIX)$$i $(DESTDIR)$(bindir)/puzzle-$$i ;\
++		ui=`echo $$i | perl -n -e 'print ucfirst'` ;\
++		echo "[Desktop Entry]\nVersion=1.0\nName=$$ui\nComment=$$ui puzzle\nExec=puzzle-$$i\nIcon=puzzle-$$i\nType=Application\nCategories=Game;LogicGame;" > $(DESTDIR)/$(prefix)/share/applications/puzzle-$$i.desktop;\
++		for d in 16 32 48; do \
++			$(INSTALL_DATA) icons/$$i-$${d}d24.png $(DESTDIR)/$(prefix)/share/icons/hicolor/$${d}x$${d}/apps/puzzle-$$i.png ;\
++		done \
+ 	done
+ test: benchmark.html benchmark.txt
+ 

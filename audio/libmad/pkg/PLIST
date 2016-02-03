@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:36 naddy Exp $
+@conflict mad-*
+include/mad.h
+lib/libmad.a
+lib/libmad.la
+@lib lib/libmad.so.${LIBmad_VERSION}
+lib/pkgconfig/mad.pc

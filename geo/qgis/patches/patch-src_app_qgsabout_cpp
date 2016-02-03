@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_app_qgsabout_cpp,v 1.6 2015/07/21 10:06:14 landry Exp $
+--- src/app/qgsabout.cpp.orig	Fri Jun 26 14:38:57 2015
++++ src/app/qgsabout.cpp	Mon Jun 29 22:10:38 2015
+@@ -231,7 +231,7 @@ void QgsAbout::setWhatsNew()
+ {
+   txtWhatsNew->clear();
+   txtWhatsNew->document()->setDefaultStyleSheet( QgsApplication::reportStyleSheet() );
+-  txtWhatsNew->setSource( "file:///" + QgsApplication::pkgDataPath() + "/doc/news.html" );
++  txtWhatsNew->setSource( "file:///" + QgsApplication::pkgDataPath() + "/../doc/qgis/news.html" );
+ }
+ 
+ void QgsAbout::setPluginInfo()

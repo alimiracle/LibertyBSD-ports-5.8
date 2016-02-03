@@ -1,0 +1,13 @@
+$OpenBSD: patch-lsof_8,v 1.7 2015/03/24 21:26:09 sthen Exp $
+--- lsof.8.orig	Tue Oct 14 17:04:10 2014
++++ lsof.8	Tue Mar 24 21:21:21 2015
+@@ -872,7 +872,8 @@ where:
+ 		applies to all IP versions.
+ .br
+ 	\fIprotocol\fP is a protocol name \- \fBTCP\fP, \fBUDP\fP
+-.br		or \fBUDPLITE\fP.
++.br
++		or \fBUDPLITE\fP.
+ .br
+ 	\fIhostname\fP is an Internet host name.  Unless a
+ .br

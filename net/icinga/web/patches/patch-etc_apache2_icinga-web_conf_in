@@ -1,0 +1,18 @@
+$OpenBSD: patch-etc_apache2_icinga-web_conf_in,v 1.6 2014/10/02 21:05:02 sthen Exp $
+--- etc/apache2/icinga-web.conf.in.orig	Wed Aug 13 11:06:35 2014
++++ etc/apache2/icinga-web.conf.in	Wed Aug 13 13:04:09 2014
+@@ -5,9 +5,13 @@
+ # Copyright (C) 2009-2014 Icinga Development Team (http://www.icinga.org)
+ ###
+ 
++<IfModule !mod_rewrite.c>
++LoadModule rewrite_module      ${LOCALBASE}/lib/apache/modules/mod_rewrite.so
++</IfModule>
++
+ # Matching for module stylesheet and images
+ AliasMatch "^@web_path@/modules/([A-Za-z0-9]+)/resources/styles/([A-Za-z0-9]+\.css)$" "@prefix@/app/modules/$1/pub/styles/$2"
+-AliasMatch "^@web_path@/modules/([A-Za-z0-9]+)/resources/images/([A-Za-z_\-0-9]+\.(?:png|gif|jpg))$" "@prefix@/app/modules/$1/pub/images/$2"
++AliasMatch "^@web_path@/modules/([A-Za-z0-9]+)/resources/images/([-_A-Za-z0-9]+\.(png|gif|jpg))$" "@prefix@/app/modules/$1/pub/images/$2"
+ 
+ # Matching for Icinga Web and the ext3 framework
+ Alias @web_path@/js/ext3/ @prefix@/lib/ext3/

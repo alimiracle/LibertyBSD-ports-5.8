@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $OpenBSD: gdnsd.rc,v 1.2 2014/10/03 11:53:23 jasper Exp $
+
+daemon="${PREFIX}/sbin/gdnsd"
+
+. /etc/rc.d/rc.subr
+
+rc_start() {
+	${rcexec} "${daemon} start"
+}
+
+rc_reload() {
+	${daemon} reload
+}
+
+rc_restart() {
+	${daemon} restart
+}
+
+rc_stop() {
+	${daemon} stop
+}
+
+rc_cmd $1

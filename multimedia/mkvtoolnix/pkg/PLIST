@@ -1,0 +1,66 @@
+@comment $OpenBSD: PLIST,v 1.10 2015/07/20 20:24:53 ajacoutot Exp $
+@bin bin/mkvextract
+@bin bin/mkvinfo
+@bin bin/mkvmerge
+@bin bin/mkvpropedit
+man/de/
+man/de/man1/
+@man man/de/man1/mkvextract.1
+@man man/de/man1/mkvinfo.1
+@man man/de/man1/mkvmerge.1
+@man man/de/man1/mkvpropedit.1
+man/es/
+man/es/man1/
+@man man/es/man1/mkvextract.1
+@man man/es/man1/mkvinfo.1
+@man man/es/man1/mkvmerge.1
+@man man/es/man1/mkvpropedit.1
+man/ja/
+man/ja/man1/
+@man man/ja/man1/mkvextract.1
+@man man/ja/man1/mkvinfo.1
+@man man/ja/man1/mkvmerge.1
+@man man/ja/man1/mkvpropedit.1
+@man man/man1/mkvextract.1
+@man man/man1/mkvinfo.1
+@man man/man1/mkvmerge.1
+@man man/man1/mkvpropedit.1
+man/nl/
+man/nl/man1/
+@man man/nl/man1/mkvextract.1
+@man man/nl/man1/mkvinfo.1
+@man man/nl/man1/mkvmerge.1
+@man man/nl/man1/mkvpropedit.1
+man/uk/
+man/uk/man1/
+@man man/uk/man1/mkvextract.1
+@man man/uk/man1/mkvinfo.1
+@man man/uk/man1/mkvmerge.1
+@man man/uk/man1/mkvpropedit.1
+man/zh_CN/
+man/zh_CN/man1/
+@man man/zh_CN/man1/mkvextract.1
+@man man/zh_CN/man1/mkvinfo.1
+@man man/zh_CN/man1/mkvmerge.1
+@man man/zh_CN/man1/mkvpropedit.1
+share/locale/ca/LC_MESSAGES/mkvtoolnix.mo
+share/locale/cs/LC_MESSAGES/mkvtoolnix.mo
+share/locale/de/LC_MESSAGES/mkvtoolnix.mo
+share/locale/es/LC_MESSAGES/mkvtoolnix.mo
+share/locale/eu/LC_MESSAGES/mkvtoolnix.mo
+share/locale/fr/LC_MESSAGES/mkvtoolnix.mo
+share/locale/it/LC_MESSAGES/mkvtoolnix.mo
+share/locale/ja/LC_MESSAGES/mkvtoolnix.mo
+share/locale/lt/LC_MESSAGES/mkvtoolnix.mo
+share/locale/nl/LC_MESSAGES/mkvtoolnix.mo
+share/locale/pl/LC_MESSAGES/mkvtoolnix.mo
+share/locale/pt/LC_MESSAGES/mkvtoolnix.mo
+share/locale/pt_BR/LC_MESSAGES/mkvtoolnix.mo
+share/locale/ru/LC_MESSAGES/mkvtoolnix.mo
+share/locale/sr/LC_MESSAGES/mkvtoolnix.mo
+share/locale/sv/LC_MESSAGES/mkvtoolnix.mo
+share/locale/tr/LC_MESSAGES/mkvtoolnix.mo
+share/locale/uk/LC_MESSAGES/mkvtoolnix.mo
+share/locale/zh_CN/LC_MESSAGES/mkvtoolnix.mo
+share/locale/zh_TW/LC_MESSAGES/mkvtoolnix.mo
+!%%no_x11%%

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.4 2014/10/28 22:25:45 sthen Exp $
+@conflict py-twisted-conch-*
+@bin bin/cftp
+@info info/cftp.info

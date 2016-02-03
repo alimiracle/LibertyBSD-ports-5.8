@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_mainwindow_cpp,v 1.4 2015/05/21 05:52:10 dcoppa Exp $
+
+Do not use symbolic icons
+
+--- src/mainwindow.cpp.orig	Wed Apr  8 11:38:01 2015
++++ src/mainwindow.cpp	Mon May 11 20:49:56 2015
+@@ -567,7 +567,7 @@ void MainWindow::createActions() {
+     action = new QAction(tr("More..."), this);
+     actions->insert("more-region", action);
+ 
+-    action = new QAction(IconUtils::icon("view-list"), tr("&Related Videos"), this);
++    action = new QAction(IconUtils::icon("format-justify-fill"), tr("&Related Videos"), this);
+     action->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_R));
+     action->setStatusTip(tr("Watch videos related to the current one"));
+     action->setEnabled(false);

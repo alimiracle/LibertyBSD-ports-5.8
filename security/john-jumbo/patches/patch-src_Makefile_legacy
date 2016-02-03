@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_Makefile_legacy,v 1.1 2015/01/16 15:40:01 sthen Exp $
+--- src/Makefile.legacy.orig	Thu Dec 18 07:59:02 2014
++++ src/Makefile.legacy	Fri Jan 16 15:08:20 2015
+@@ -1073,11 +1073,9 @@ openbsd-alpha:
+ openbsd-sparc64:
+ 	$(LN) sparc64.h arch.h
+ 	@echo "#define JOHN_BLD" '"'$@'"' > john_build_rule.h
+-	$(MAKE_ORIG) $(PROJ) \
+-		CFLAGS="$(CFLAGS) -m64 -mcpu=ultrasparc" \
+-		LDFLAGS="$(LDFLAGS) -m64"
++	$(MAKE_ORIG) $(PROJ)
+ 	@echo "Failing after this point just means some helper tools did not build:"
+-	$(MAKE_ORIG) $(PROJ_PCAP) CFLAGS="$(CFLAGS) -m64"
++	$(MAKE_ORIG) $(PROJ_PCAP)
+ 	@echo "All done"
+ 
+ openbsd-sparc:
+@@ -2307,7 +2305,7 @@ john.com: john.asm
+ 
+ ../run/cprepair: cprepair.c unicode.c unicode.h options.h misc.h misc.c \
+ 	memdbg.h memdbg.c
+-	$(CC) -Wall -O3 -s -DNOT_JOHN -D_JOHN_MISC_NO_LOG cprepair.c unicode.c \
++	$(CC) -Wall $(COPTFLAGS) -s -DNOT_JOHN -D_JOHN_MISC_NO_LOG cprepair.c unicode.c \
+ 	misc.c memdbg.c -o ../run/cprepair
+ 
+ ../run/tgtsnarf: tgtsnarf.o

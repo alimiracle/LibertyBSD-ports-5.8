@@ -1,0 +1,14 @@
+$OpenBSD: patch-po_POTFILES_in,v 1.2 2015/05/24 17:18:46 bcallah Exp $
+
+Fix 'make test'
+
+--- po/POTFILES.in.orig	Fri Mar 27 17:19:55 2015
++++ po/POTFILES.in	Fri Mar 27 17:20:10 2015
+@@ -1,6 +1,7 @@
+ uget/UgetApp.c
+ uget/UgetEvent.c
+ uget/UgetPluginAria2.c
++uget/pwmd.c
+ ui-gtk/UgtkAboutDialog.c
+ ui-gtk/UgtkApp-main.c
+ ui-gtk/UgtkApp-timeout.c

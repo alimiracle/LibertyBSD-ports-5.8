@@ -1,0 +1,19 @@
+$OpenBSD: README-main,v 1.8 2015/07/28 14:46:13 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+For proper functionality, multicast(4) needs to be enabled. To do so,
+add the following line to /etc/rc.conf.local(8):
+    multicast_host=YES
+
+Note that you MUST have a system-wide D-BUS daemon running BEFORE
+starting avahi, e.g.:
+    rcctl set messagebus status on
+    rcctl set avahi_daemon status on
+    rcctl order messagebus avahi_daemon
+
+A rule similar to the one below can be used in pf.conf(5) to pass
+incoming avahi (multicast) traffic:
+    pass proto udp from any to 224.0.0.251 port mdns allow-opts

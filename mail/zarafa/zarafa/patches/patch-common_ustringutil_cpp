@@ -1,0 +1,40 @@
+$OpenBSD: patch-common_ustringutil_cpp,v 1.4 2015/04/05 22:25:08 robert Exp $
+--- common/ustringutil.cpp.orig	Thu Mar  5 16:54:04 2015
++++ common/ustringutil.cpp	Fri Apr  3 23:11:10 2015
+@@ -160,12 +160,14 @@ int ECSortKey::compareTo(const ECSortKey &other) const
+  */
+ const char* str_ifind(const char *haystack, const char *needle)
+ {
++#ifndef __OpenBSD__
+ 	locale_t loc = createlocale(LC_CTYPE, "C");
++#endif
+ 	char *needlepos = (char*)needle;
+ 	char *needlestart = (char*)haystack;
+ 
+ 	while(*haystack) {
+-		if (toupper_l(*haystack, loc) == toupper_l(*needlepos, loc)) {
++		if (toupper(*haystack) == toupper(*needlepos)) {
+ 			needlepos++;
+ 
+ 			if(*needlepos == 0)
+@@ -180,7 +182,9 @@ const char* str_ifind(const char *haystack, const char
+ 	needlestart = NULL;
+ 
+ exit:
++#ifndef __OpenBSD__
+ 	freelocale(loc);
++#endif
+ 
+ 	return needlestart;
+ }
+@@ -1596,8 +1600,10 @@ ECLocale::ECLocale(const ECLocale &other)
+ }
+ 
+ ECLocale::~ECLocale() {
++#ifndef __OpenBSD__
+ 	if (m_locale)
+ 		freelocale(m_locale);
++#endif
+ }
+ 
+ ECLocale &ECLocale::operator=(const ECLocale &other) {

@@ -1,0 +1,11 @@
+$OpenBSD: patch-chrome_chrome_common_gypi,v 1.2 2015/07/23 13:44:04 robert Exp $
+--- chrome/chrome_common.gypi.orig.port	Wed Jul 15 22:29:59 2015
++++ chrome/chrome_common.gypi	Wed Jul 22 08:37:29 2015
+@@ -540,6 +540,7 @@
+         }],
+         ['safe_browsing==1', {
+           'sources': [ '<@(chrome_common_full_safe_browsing_sources)', ],
++          'dependencies': [ 'safe_browsing_proto' ],
+         }],
+       ],
+       'target_conditions': [

@@ -1,0 +1,24 @@
+$OpenBSD: patch-io_hpmud_musb_c,v 1.9 2015/04/17 04:18:13 ajacoutot Exp $
+
+backwards memcpy
+
+--- io/hpmud/musb.c.orig	Tue Apr 14 11:53:07 2015
++++ io/hpmud/musb.c	Fri Apr 17 05:54:22 2015
+@@ -770,7 +770,7 @@ static int device_id(int fd, unsigned char *buffer, in
+         len = size-1;   /* leave byte for zero termination */
+     if (len > 2)
+         len -= 2;
+-    memcpy(buffer, buffer+2, len);    /* remove length */
++    memmove(buffer, buffer+2, len);    /* remove length */
+     buffer[len]=0;
+     DBG("read actual device_id successfully fd=%d len=%d\n", fd, len);
+ 
+@@ -1256,7 +1256,7 @@ enum HPMUD_RESULT __attribute__ ((visibility ("hidden"
+ 
+     if (*len)
+     {
+-        memcpy(buf, pd->id, *len > size ? size : *len);
++        memmove(buf, pd->id, *len > size ? size : *len);
+         stat = HPMUD_R_OK;
+     }
+ 

@@ -1,0 +1,24 @@
+$OpenBSD: patch-Xwnmo_xwnmo_do_xjutil_c,v 1.2 2015/07/25 16:47:12 espie Exp $
+--- Xwnmo/xwnmo/do_xjutil.c.orig	Tue Aug 23 10:16:57 1994
++++ Xwnmo/xwnmo/do_xjutil.c	Fri Jul 24 18:29:45 2015
+@@ -37,6 +37,7 @@
+ #ifdef	USING_XJUTIL
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <sys/wait.h>
+ #include <signal.h>
+ #include <X11/Xos.h>
+@@ -254,11 +255,7 @@ static void
+ catch_sigchld()
+ {
+     XIMLangDataBase *ld;
+-#ifdef SYSVR2
+-   int status;
+-#else
+-    union wait status;
+-#endif
++    int status;
+     int pid;
+ 
+ #ifdef SYSVR2

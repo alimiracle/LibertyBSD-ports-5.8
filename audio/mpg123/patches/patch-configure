@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure,v 1.16 2015/06/13 20:25:07 naddy Exp $
+--- configure.orig	Sun May 24 14:54:07 2015
++++ configure	Tue Jun  9 01:27:03 2015
+@@ -14559,10 +14559,10 @@ fi
+ # opt-in for IEEE754 floating point action
+ # We want to make sure not to apply hacks relying on IEEE754 storage format on platforms where we did not make sure that this actually is valid.
+ # It _should_ be fine for about all computers still out there, but we play safe.
+-ieee=no
++ieee=yes
+ case $host in
+-  i?86-*|x86_64-*|powerpc*|sparc*)
+-    ieee=yes
++  vax-*)
++    ieee=no
+   ;;
+ esac
+ if test "x$ieee" = xyes; then

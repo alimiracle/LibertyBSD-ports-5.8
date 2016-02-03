@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_options_c,v 1.10 2015/04/23 05:54:04 dcoppa Exp $
+--- src/options.c.orig	Wed Apr  8 11:21:11 2015
++++ src/options.c	Thu Apr 23 07:46:02 2015
+@@ -155,7 +155,7 @@ static void feh_load_options_for_theme(char *theme)
+ 
+ 	free(oldrcpath);
+ 
+-	if (!fp && ((fp = fopen("/etc/feh/themes", "r")) == NULL))
++	if (!fp && ((fp = fopen("${SYSCONFDIR}/feh/themes", "r")) == NULL))
+ 		return;
+ 
+ 	/* Oooh. We have an options file :) */

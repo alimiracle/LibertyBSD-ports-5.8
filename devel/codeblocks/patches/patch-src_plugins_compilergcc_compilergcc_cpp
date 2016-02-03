@@ -1,0 +1,51 @@
+$OpenBSD: patch-src_plugins_compilergcc_compilergcc_cpp,v 1.3 2014/09/11 14:02:55 ajacoutot Exp $
+
+Always use cb_console_runner from installed PREFIX.
+
+--- src/plugins/compilergcc/compilergcc.cpp.orig	Sun Dec  8 16:00:22 2013
++++ src/plugins/compilergcc/compilergcc.cpp	Thu Sep 11 10:28:18 2014
+@@ -159,7 +159,7 @@ namespace
+ {
+     PluginRegistrant<CompilerGCC> reg(_T("Compiler"));
+ 
+-    static const wxString strCONSOLE_RUNNER(platform::windows ? _T("cb_console_runner.exe") : _T("cb_console_runner"));
++    static const wxString strCONSOLE_RUNNER(platform::windows ? _T("cb_console_runner.exe") : _T("${PREFIX}/bin/cb_console_runner"));
+     static const wxString strSLASH(_T("/"));
+     static const wxString strSPACE(_T(" "));
+     static const wxString strQUOTE(platform::windows ? _T("\"") : _T("'"));
+@@ -1720,8 +1720,7 @@ int CompilerGCC::RunSingleFile(const wxString& filenam
+     }
+     wxString baseDir = ConfigManager::GetExecutableFolder();
+ 
+-    if (wxFileExists(baseDir + strSLASH + strCONSOLE_RUNNER))
+-        cmd << baseDir << strSLASH << strCONSOLE_RUNNER << strSPACE;
++    cmd << strCONSOLE_RUNNER << strSPACE;
+ 
+     if (!cmd.Replace(_T("$SCRIPT"), exe_filename))
+         // if they didn't specify $SCRIPT, append:
+@@ -1836,7 +1835,7 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
+                         : EscapeSpaces(m_CdRun);
+     wxString crunnStr = platform::windows
+                         ? strQUOTE + baseDir + strSLASH + strCONSOLE_RUNNER + strQUOTE
+-                        : EscapeSpaces(baseDir + strSLASH + strCONSOLE_RUNNER);
++                        : EscapeSpaces(strCONSOLE_RUNNER);
+     wxString hostapStr = platform::windows
+                         ? strQUOTE + target->GetHostApplication() + strQUOTE
+                         : EscapeSpaces(target->GetHostApplication());
+@@ -1874,8 +1873,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
+ 
+         if (target->GetUseConsoleRunner())
+         {
+-            if (wxFileExists(baseDir + strSLASH + strCONSOLE_RUNNER))
+-            {
+                 command << crunnStr << strSPACE;
+ 
+                 if (!platform::windows)
+@@ -1887,7 +1884,6 @@ int CompilerGCC::Run(ProjectBuildTarget* target)
+                     QuoteStringIfNeeded(strLinkerPath);
+                     command << strLinkerPath << strSPACE;
+                 }
+-            }
+         }
+     }
+ 

@@ -1,0 +1,23 @@
+/patch-README/1.2/Fri May 10 09:56:45 2013//
+/patch-client_Makefile_OpenBSD/1.1/Fri May 10 09:56:45 2013//
+/patch-client_README/1.1/Fri May 10 09:56:45 2013//
+/patch-client_dhcpc_8/1.1/Fri May 10 09:56:45 2013//
+/patch-client_dhcpc_8_jis/1.1/Fri May 10 09:56:45 2013//
+/patch-client_dhcpc_c/1.1/Fri May 10 09:56:45 2013//
+/patch-client_dhcpc_h/1.1/Fri May 10 09:56:45 2013//
+/patch-client_dhcpc_subr_c/1.2/Fri May 10 10:45:46 2013//
+/patch-client_flushroute_c/1.1/Fri May 10 09:56:45 2013//
+/patch-relay_Makefile_OpenBSD/1.1/Fri May 10 09:56:45 2013//
+/patch-relay_README/1.1/Fri May 10 09:56:45 2013//
+/patch-relay_relay_c/1.1/Fri May 10 09:56:45 2013//
+/patch-server_Makefile_OpenBSD/1.2/Fri May 10 10:45:46 2013//
+/patch-server_README/1.1/Fri May 10 09:56:45 2013//
+/patch-server_common_h/1.1/Fri May 10 09:56:45 2013//
+/patch-server_database_c/1.1/Fri May 10 09:56:45 2013//
+/patch-server_delarp_c/1.1/Fri May 10 09:56:45 2013//
+/patch-server_dhcps_c/1.1/Fri May 10 09:56:45 2013//
+/patch-server_dhcps_h/1.1/Fri May 10 09:56:45 2013//
+/patch-server_getmac_c/1.2/Tue Nov 26 09:39:41 2013//
+/patch-tools_Makefile_OpenBSD/1.1/Fri May 10 09:56:45 2013//
+/patch-tools_dhcpm_c/1.1/Fri May 10 09:56:45 2013//
+D

@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.44 2014/12/15 18:19:51 brad Exp $
+--- configure.orig	Tue Nov 11 13:52:06 2014
++++ configure	Thu Nov 13 01:40:45 2014
+@@ -4069,8 +4069,6 @@ fi
+ if test "$gcov" = "yes" ; then
+   CFLAGS="-fprofile-arcs -ftest-coverage -g $CFLAGS"
+   LDFLAGS="-fprofile-arcs -ftest-coverage $LDFLAGS"
+-elif test "$debug" = "no" ; then
+-  CFLAGS="-O2 -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 $CFLAGS"
+ fi
+ 
+ ##########################################

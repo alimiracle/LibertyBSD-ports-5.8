@@ -1,0 +1,15 @@
+$OpenBSD: patch-mikmodrc,v 1.2 2014/10/18 14:57:38 bcallah Exp $
+--- mikmodrc.orig	Thu Oct  9 20:45:39 2014
++++ mikmodrc	Thu Oct  9 20:46:45 2014
+@@ -299,9 +299,9 @@ END "ARCHIVER"
+ BEGIN "ARCHIVER"
+   LOCATION = -1
+   MARKER = ".TAR.BZ2 .TBZ .TBZ2"
+-  LIST = "tar --use-compress-program=bzip2 -tf \"%a\""
++  LIST = "tar -tjf \"%a\""
+   NAMEOFFSET = 0
+-  EXTRACT = "tar --use-compress-program=bzip2 -xOf \"%a\" \"%f\""
++  EXTRACT = "tar -xjf \"%a\" \"%f\""
+   SKIPPAT = ""
+   SKIPSTART = 0
+   SKIPEND = 0

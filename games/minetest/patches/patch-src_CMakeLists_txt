@@ -1,0 +1,61 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.10 2015/04/05 21:06:23 landry Exp $
+--- src/CMakeLists.txt.orig	Mon Jul  7 00:06:06 2014
++++ src/CMakeLists.txt	Tue Nov  4 17:10:05 2014
+@@ -31,6 +31,8 @@ set(USE_GETTEXT 0)
+ 
+ if(ENABLE_GETTEXT)
+ 	find_package(GettextLib)
++	find_package(Iconv)
++	find_package(Intl)
+ else()
+ 	MARK_AS_ADVANCED(GETTEXT_ICONV_DLL GETTEXT_INCLUDE_DIR GETTEXT_LIBRARY GETTEXT_MSGFMT)
+ endif()
+@@ -182,7 +184,10 @@ else()
+ 	if(APPLE)
+ 		set(PLATFORM_LIBS "-framework CoreFoundation" ${PLATFORM_LIBS})
+ 	else()
+-		set(PLATFORM_LIBS -lrt ${PLATFORM_LIBS})
++		check_library_exists(rt clock_gettime "" HAVE_LIBRT)
++		if (HAVE_LIBRT)
++			set(PLATFORM_LIBS -lrt ${PLATFORM_LIBS})
++		endif()
+ 	endif(APPLE)
+ 	#set(CLIENT_PLATFORM_LIBS -lXxf86vm)
+ 	# This way Xxf86vm is found on OpenBSD too
+@@ -544,7 +549,8 @@ if(BUILD_CLIENT)
+ 		${BZIP2_LIBRARIES}
+ 		${PNG_LIBRARIES}
+ 		${X11_LIBRARIES}
+-		${GETTEXT_LIBRARY}
++		${ICONV_LIBRARIES}
++		${Intl_LIBRARIES}
+ 		${SOUND_LIBRARIES}
+ 		${SQLITE3_LIBRARY}
+ 		${LUA_LIBRARY}
+@@ -598,7 +604,8 @@ if(BUILD_SERVER)
+ 		${ZLIB_LIBRARIES}
+ 		${SQLITE3_LIBRARY}
+ 		${JSON_LIBRARY}
+-		${GETTEXT_LIBRARY}
++		${ICONV_LIBRARIES}
++		${Intl_LIBRARIES}
+ 		${LUA_LIBRARY}
+ 		${PLATFORM_LIBS}
+ 	)
+@@ -666,14 +673,12 @@ else()
+ 		set(OTHER_FLAGS "-mthreads -fexceptions")
+ 	endif()
+ 
+-	set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} ${OTHER_FLAGS} -ffast-math -Wall -pipe -funroll-loops")
++	set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG ${RELEASE_WARNING_FLAGS} ${WARNING_FLAGS} ${OTHER_FLAGS}")
+ 	if(APPLE)
+ 		set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Os")
+-	else()
+-		set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -fomit-frame-pointer")
+ 	endif(APPLE)
+ 	set(CMAKE_CXX_FLAGS_SEMIDEBUG "-g -O1 -Wall -Wabi ${WARNING_FLAGS} ${OTHER_FLAGS}")
+-	set(CMAKE_CXX_FLAGS_DEBUG "-g -O0 -Wall -Wabi ${WARNING_FLAGS} ${OTHER_FLAGS}")
++	set(CMAKE_CXX_FLAGS_DEBUG "-g -Wall -Wabi ${WARNING_FLAGS} ${OTHER_FLAGS}")
+ 
+ 	if(USE_GPROF)
+ 		set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -pg")

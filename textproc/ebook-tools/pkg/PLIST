@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.4 2015/05/27 16:57:17 czarkoff Exp $
+@bin bin/einfo
+bin/lit2epub
+include/epub.h
+include/epub_shared.h
+include/epub_version.h
+@lib lib/libepub.so.${LIBepub_VERSION}

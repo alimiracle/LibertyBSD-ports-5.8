@@ -1,0 +1,51 @@
+$OpenBSD: patch-configure,v 1.16 2015/02/05 22:58:24 sthen Exp $
+--- configure.orig	Tue Jun  3 15:41:42 2014
++++ configure	Mon Aug 11 12:59:30 2014
+@@ -1094,7 +1094,7 @@ do
+     ac_prev=sysconfdir ;;
+   -sysconfdir=* | --sysconfdir=* | --sysconfdi=* | --sysconfd=* | --sysconf=* \
+   | --syscon=* | --sysco=* | --sysc=* | --sys=* | --sy=*)
+-    sysconfdir=$ac_optarg ;;
++    sysconfdir=$ac_optarg/nagios ;;
+ 
+   -target | --target | --targe | --targ | --tar | --ta | --t)
+     ac_prev=target_alias ;;
+@@ -6014,7 +6014,7 @@ cat >>confdefs.h <<_ACEOF
+ #define DEFAULT_NAGIOS_GROUP "$nagios_grp"
+ _ACEOF
+ 
+-INSTALL_OPTS="-o $nagios_user -g $nagios_grp"
++INSTALL_OPTS=""
+ 
+ 
+ 
+@@ -6701,7 +6701,7 @@ $as_echo_n "checking for gdImagePng in -lgd (order 1).
+   $as_echo_n "(cached) " >&6
+ else
+   ac_save_LIBS="$LIBS"
+-	LIBS="-lgd -lttf -lpng -ljpeg -lz -lm $LIBS"
++	LIBS="-lgd -lfontconfig -lfreetype -lpng -ljpeg -lz -lm $LIBS"
+ 	cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -6761,7 +6761,7 @@ fi
+ $as_echo "yes" >&6; }
+ 
+ 			GDLIBFOUND=yep
+-			GDLIBS="-lgd -lttf -lpng -ljpeg -lz -lm"
++			GDLIBS="-lgd -lfontconfig -lfreetype -lpng -ljpeg -lz -lm"
+ 
+ 	else
+ 	  { $as_echo "$as_me:$LINENO: result: no" >&5
+@@ -7766,9 +7766,9 @@ $as_echo_n "checking for linker flags for loadable mod
+ 			MOD_LDFLAGS="-shared"
+ 			MOD_CFLAGS="-fPIC"
+ 		;;
+-		freebsd*)
++		freebsd* | openbsd*)
+ 			MOD_LDFLAGS="-shared"
+-			MOD_CFLAGS="-fPIC"
++			MOD_CFLAGS="-fPIC -DPIC"
+ 		;;
+ 		*)
+ 			# assume GNU linker and ELF

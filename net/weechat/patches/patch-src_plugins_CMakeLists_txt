@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_plugins_CMakeLists_txt,v 1.2 2015/01/20 11:44:30 dcoppa Exp $
+--- src/plugins/CMakeLists.txt.orig	Sun Jan 11 02:39:40 2015
++++ src/plugins/CMakeLists.txt	Tue Jan 20 04:49:06 2015
+@@ -107,8 +107,8 @@ if(ENABLE_SCRIPTS AND ENABLE_PERL)
+ endif()
+ 
+ if(ENABLE_SCRIPTS AND ENABLE_PYTHON)
+-  find_package(Python)
+-  if(PYTHON_FOUND)
++  find_package(PythonLibs)
++  if(PYTHONLIBS_FOUND)
+     add_subdirectory(python)
+   endif()
+ endif()

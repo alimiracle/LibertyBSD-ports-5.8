@@ -1,0 +1,32 @@
+$OpenBSD: patch-configure,v 1.25 2015/04/24 14:51:26 ajacoutot Exp $
+--- configure.orig	Fri Apr 24 04:11:15 2015
++++ configure	Fri Apr 24 15:47:27 2015
+@@ -13157,9 +13157,7 @@ CFLAGS=$save_CFLAGS
+ fi
+ 
+ if test "$ac_cv_fpic" = "yes"; then
+-    FPIC_CFLAGS="-fPIC"
+-else
+-    FPIC_CFLAGS=""
++    CFLAGS="${CFLAGS} -fPIC"
+ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_fpic" >&5
+ $as_echo "$ac_cv_fpic" >&6; }
+@@ -14604,7 +14602,7 @@ fi
+ 
+ 
+ 
+-  LIBS="${LIBS} ${BDB_LIBADD}"
++  LIBS="${BDB_LIBADD} ${LIBS}"
+   CPPFLAGS="${BDB_INCADD} ${CPPFLAGS}"
+ 
+ $as_echo "#define HAVE_BDB /**/" >>confdefs.h
+@@ -19918,7 +19916,7 @@ $as_echo "$as_me: WARNING: Perl not found: Administrat
+ elif test "${with_perl}" != "no"; then
+     PERL="${with_perl}"
+     case "${target_os}" in
+-        linux*|netbsd*|freebsd*|dragonfly*)
++        linux*|netbsd*|freebsd*|dragonfly*|openbsd*)
+             { $as_echo "$as_me:${as_lineno-$LINENO}: checking for perl cccdlflags needed on \"${target_os}\"" >&5
+ $as_echo_n "checking for perl cccdlflags needed on \"${target_os}\"... " >&6; }
+             eval `${PERL} -V:cccdlflags`

@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.2 2015/03/31 09:45:10 ajacoutot Exp $
+@pkgpath x11/freefarsi-ttf
+share/fonts/
+@fontdir share/fonts/freefarsi/
+share/fonts/freefarsi/FreeFarsi.ttf
+share/fonts/freefarsi/FreeFarsiBold.ttf
+share/fonts/freefarsi/FreeFarsiBoldItalic.ttf
+share/fonts/freefarsi/FreeFarsiItalic.ttf

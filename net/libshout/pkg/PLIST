@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.6 2015/03/16 18:07:52 naddy Exp $
+include/shout/
+include/shout/shout.h
+lib/libshout.a
+lib/libshout.la
+@lib lib/libshout.so.${LIBshout_VERSION}
+lib/pkgconfig/shout.pc
+share/aclocal/
+share/aclocal/shout.m4
+share/examples/libshout/
+@comment share/examples/libshout/COPYING
+@comment share/examples/libshout/NEWS
+@comment share/examples/libshout/README
+share/examples/libshout/example.c
+share/examples/libshout/nonblocking.c

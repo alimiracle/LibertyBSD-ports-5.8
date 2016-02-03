@@ -1,0 +1,46 @@
+$OpenBSD: patch-gettext-runtime_intl_relocatable_c,v 1.5 2015/07/19 23:46:08 naddy Exp $
+--- gettext-runtime/intl/relocatable.c.orig	Fri Jun  5 09:01:10 2015
++++ gettext-runtime/intl/relocatable.c	Sat Jul 18 19:13:09 2015
+@@ -510,13 +510,17 @@ relocate (const char *pathname)
+       if (pathname[orig_prefix_len] == '\0')
+         {
+           /* pathname equals orig_prefix.  */
+-          char *result = (char *) xmalloc (strlen (curr_prefix) + 1);
++          char *result;
++          size_t len;
+ 
++          len = strlen (curr_prefix) + 1;
++          result = (char *) xmalloc (len);
++
+ #ifdef NO_XMALLOC
+           if (result != NULL)
+ #endif
+             {
+-              strcpy (result, curr_prefix);
++              strlcpy (result, curr_prefix, len);
+               return result;
+             }
+         }
+@@ -524,15 +528,19 @@ relocate (const char *pathname)
+         {
+           /* pathname starts with orig_prefix.  */
+           const char *pathname_tail = &pathname[orig_prefix_len];
+-          char *result =
+-            (char *) xmalloc (curr_prefix_len + strlen (pathname_tail) + 1);
++          char *result;
++          size_t len;
+ 
++          len = curr_prefix_len + strlen (pathname_tail) + 1;
++          result = (char *) xmalloc (len);
++
+ #ifdef NO_XMALLOC
+           if (result != NULL)
+ #endif
+             {
+               memcpy (result, curr_prefix, curr_prefix_len);
+-              strcpy (result + curr_prefix_len, pathname_tail);
++              result[curr_prefix_len] = '\0';
++              strlcat (result, pathname_tail, len);
+               return result;
+             }
+         }

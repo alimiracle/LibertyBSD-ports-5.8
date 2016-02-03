@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.4 2015/06/19 09:07:32 ajacoutot Exp $
+--- configure.orig	Sun Dec  9 14:03:36 2007
++++ configure	Fri Jun 19 10:54:09 2015
+@@ -302,7 +302,7 @@ cpu=`uname -m`
+ optimize="yes"
+ debug="no"
+ dostrip="yes"
+-extralibs=""
++extralibs="-lintl"
+ installstrip="-s"
+ cross_compile="no"
+ INSTALL="/usr/bin/install -c"

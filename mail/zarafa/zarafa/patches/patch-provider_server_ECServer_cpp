@@ -1,0 +1,47 @@
+$OpenBSD: patch-provider_server_ECServer_cpp,v 1.29 2015/04/05 22:25:08 robert Exp $
+--- provider/server/ECServer.cpp.orig	Thu Mar  5 16:54:03 2015
++++ provider/server/ECServer.cpp	Fri Apr  3 23:11:10 2015
+@@ -85,6 +85,10 @@
+ #include "unicode/uclean.h"
+ #endif
+ 
++#ifdef __OpenBSD__
++#include <sys/resource.h>
++#endif
++
+ #ifdef _DEBUG
+ #define new DEBUG_NEW
+ #undef THIS_FILE
+@@ -930,7 +934,7 @@ int running_server(char *szName, const char *szConfig,
+ 		{ "mysql_config_file",			"/etc/zarafa/my.cnf" },
+ #endif
+ 		{ "attachment_storage",			"database" },
+-		{ "attachment_path",			"/var/lib/zarafa/attachments" },
++		{ "attachment_path",			"/var/db/zarafa/attachments" },
+ 		{ "attachment_compression",		"6" },
+ 
+ 		// Log options
+@@ -1003,7 +1007,7 @@ int running_server(char *szName, const char *szConfig,
+ 
+ 		{ "client_update_enabled",	"no" },
+ 		{ "client_update_log_level", "1", CONFIGSETTING_RELOADABLE },
+-		{ "client_update_path",		"/var/lib/zarafa/client", CONFIGSETTING_RELOADABLE },
++		{ "client_update_path",		"/var/db/zarafa/client", CONFIGSETTING_RELOADABLE },
+ 		{ "client_update_log_path",	"/var/log/zarafa/autoupdate", CONFIGSETTING_RELOADABLE },
+ 		{ "index_services_enabled", "", CONFIGSETTING_UNUSED },
+ 		{ "index_services_path",    "", CONFIGSETTING_UNUSED },
+@@ -1033,10 +1037,14 @@ int running_server(char *szName, const char *szConfig,
+ 		{ NULL, NULL },
+ 	};
+ 
++#if defined(__linux__)
+ 	char buffer[256];
+ 	confstr(_CS_GNU_LIBPTHREAD_VERSION, buffer, sizeof(buffer));
+ 	if (strncmp(buffer, "linuxthreads", strlen("linuxthreads")) == 0)
+ 		m_bNPTL = false;
++#elif defined(__OpenBSD__)
++	m_bNPTL = true;
++#endif
+ 
+ 	// Init random generator
+ 	rand_init();

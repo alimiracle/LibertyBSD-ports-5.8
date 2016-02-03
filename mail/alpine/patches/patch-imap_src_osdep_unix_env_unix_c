@@ -1,0 +1,19 @@
+$OpenBSD: patch-imap_src_osdep_unix_env_unix_c,v 1.2 2015/01/27 13:38:05 ajacoutot Exp $
+--- imap/src/osdep/unix/env_unix.c.orig	Mon Jan 12 06:12:25 2015
++++ imap/src/osdep/unix/env_unix.c	Tue Jan 27 08:57:49 2015
+@@ -967,15 +967,12 @@ char *myhomedir ()
+ static char *mymailboxdir ()
+ {
+   char *home = myhomedir ();
+-				/* initialize if first time */
+-  if (!myMailboxDir && myHomeDir) {
+     if (mailsubdir) {
+       char tmp[MAILTMPLEN];
+       sprintf (tmp,"%s/%s",home,mailsubdir);
+       myMailboxDir = cpystr (tmp);/* use pre-defined subdirectory of home */
+     }
+     else myMailboxDir = cpystr (home);
+-  }
+   return myMailboxDir ? myMailboxDir : "";
+ }
+ 

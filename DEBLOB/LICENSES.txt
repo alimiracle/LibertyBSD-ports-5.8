@@ -1,0 +1,93 @@
+This is a list of licenses; it is adapted from the FSF's
+licensing list, and includes some licenses that aren't
+on the FSF's original page, but are free/non-free as
+per the Free Software definition.
+
+========================================================
+FREE SOFTWARE LICENSES
+========================================================
+
+==== GPL-COMPATIBLE LICENSES
+* GNU General Public License version 3
+  - AKA "GPLv3," "GPL3"
+* GNU General Public License version 2
+  - AKA "GPLv2," "GPL2"
+* GNU General Public License version 1
+  - AKA "GPL," "GPLv1"
+  - Notes: Often dual licensed with the Artistic 1.0,
+           which is a non-free license. Because you can
+	   choose between which license these programs
+	   should be under, they are libre.
+* GNU Lesser General Public License version 3
+  - AKA "LGPLv3," "LGPL3"
+* GNU Lesser General Public License version 2.1
+  - AKA "LGPLv2," "LGPLv2.1," "LGPL2"
+* GNU Affero General Public License version 3
+  - AKA "AGPLv3," AGPL3"
+* GNU All-Permissive License
+* Apache License version 2.0
+* Artistic License version 2.0
+  - AKA "artistic 2.0," "artistic 2"
+  - Notes: Shouldn't be confused with the non-free
+           Artistic 1.0 license. Sometimes the license
+	   is listed just as "artistic" when it is
+	   Artistic 2.0, so always make sure to double-
+	   check.
+* Clarified Artistic License
+* Berkeley Database License
+* Boost Software License
+  - AKA "boost"
+* Modified BSD license
+  - AKA "3-clause bsd," "bsd"
+* CC0
+* CeCILL version 2
+* The Clear BSD License
+  - AKA "bsd"
+* Cryptix General License
+* eCos license version 2.0
+* Educational Community License 2.0
+* Eiffel Forum License, version 2
+* EU DataGrid Software License
+* Expat License
+  - AKA "expat"
+* FreeBSD license
+  - AKA "2-clause bsd," "freebsd," "bsd
+* Freetype Project License
+* Historical Permission Notice and Disclaimer
+* License of the iMatix Standard Function Library
+* License of imlib2
+* Independent JPEG Group License
+* Intel Open Source License
+* ISC License
+  - AKA "openbsd," "isc"
+* Mozilla Public License version 2.0
+  - AKA "mozilla public license," "mpl"
+* NCSA/University of Illinois License
+* OpenLDAP License version 2.7
+* License of Perl 5 & below
+  - AKA "same terms of perl itself," "perl license," "perl_5"
+* Public Domain
+  - AKA "pd," public domain"
+* License of Python versions 2.01, 2.1.1, and newer
+* License of Python versions 1.6a2 and older
+* License of Ruby
+  - AKA "ruby"
+* SGI Free Software License B version 2.0
+* Standard ML of New Jersey Copyright License
+* Unicode, INc. License Agreement for Data Files and Software
+  - AKA "unicode"
+* Universal Permissive License
+  - AKA "upl"
+* The Unlicense
+* License of Vim
+* W3C Software Notice and License
+* License of WebM
+* WTFPL
+  - AKA "wtfpl"
+* WxWidgets License
+* X11 License
+  - AKA "mit," "x11"
+* XFree86 1.1 License
+* License of ZLib
+  - AKA "zlib"
+* Zope Public License versions 2.0 and 2.1

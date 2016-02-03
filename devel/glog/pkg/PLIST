@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:40 naddy Exp $
+include/glog/
+include/glog/log_severity.h
+include/glog/logging.h
+include/glog/raw_logging.h
+include/glog/stl_logging.h
+include/glog/vlog_is_on.h
+lib/libglog.a
+lib/libglog.la
+@lib lib/libglog.so.${LIBglog_VERSION}
+lib/pkgconfig/libglog.pc
+share/doc/glog/
+share/doc/glog/AUTHORS
+share/doc/glog/COPYING
+share/doc/glog/ChangeLog
+share/doc/glog/INSTALL
+share/doc/glog/NEWS
+share/doc/glog/README
+share/doc/glog/README.windows
+share/doc/glog/designstyle.css
+share/doc/glog/glog.html

@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_polkitbackend_polkitbackendinteractiveauthority_c,v 1.6 2015/07/20 20:16:59 ajacoutot Exp $
+
+From 074df27827fd773f1c76545cd08da568440ca41f Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Sun, 19 Jul 2015 02:19:08 +0200
+Subject: Add support for OpenBSD
+
+--- src/polkitbackend/polkitbackendinteractiveauthority.c.orig	Fri Jun 19 22:39:58 2015
++++ src/polkitbackend/polkitbackendinteractiveauthority.c	Sun Jul 19 02:08:14 2015
+@@ -23,7 +23,11 @@
+ #include <errno.h>
+ #include <pwd.h>
+ #include <grp.h>
++#ifdef HAVE_NETGROUP_H
++#include <netgroup.h>
++#else
+ #include <netdb.h>
++#endif
+ #include <string.h>
+ #include <glib/gstdio.h>
+ #include <locale.h>
+@@ -2236,7 +2240,11 @@ get_users_in_net_group (PolkitIdentity                
+ 
+   for (;;)
+     {
++#if defined HAVE_OPENBSD
++      const char *hostname, *username, *domainname;
++#else
+       char *hostname, *username, *domainname;
++#endif
+       PolkitIdentity *user;
+       GError *error = NULL;
+ 

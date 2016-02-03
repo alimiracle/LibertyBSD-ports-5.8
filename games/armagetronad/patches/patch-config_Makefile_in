@@ -1,0 +1,12 @@
+$OpenBSD: patch-config_Makefile_in,v 1.2 2015/05/28 18:54:21 bcallah Exp $
+--- config/Makefile.in.orig	Thu Feb 26 14:38:11 2015
++++ config/Makefile.in	Tue May 26 01:39:09 2015
+@@ -312,7 +312,7 @@ top_srcdir = @top_srcdir@
+ version = @version@
+ 
+ # configuration location
+-configdir = ${aa_sysconfdir}
++configdir = ${prefix}/share/examples/armagetronad
+ nobase_config_DATA = default.cfg master.srv settings.cfg\
+ 	subcultures.srv\
+ 	settings_visual.cfg\

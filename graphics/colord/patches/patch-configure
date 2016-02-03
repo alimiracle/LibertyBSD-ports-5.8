@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.24 2015/04/09 07:20:24 ajacoutot Exp $
+
+/var/lib -> /var/db
+
+--- configure.orig	Wed Apr  8 21:26:21 2015
++++ configure	Thu Apr  9 09:04:06 2015
+@@ -18689,7 +18689,7 @@ fi
+ 
+ 
+ # per-machine directory
+-CD_SYSTEM_PROFILES_DIR="\$(localstatedir)/lib/colord/icc"
++CD_SYSTEM_PROFILES_DIR="\$(localstatedir)/db/colord/icc"
+ 
+ 
+ # only include the colord.pc Requires.private of the libraries we actually use

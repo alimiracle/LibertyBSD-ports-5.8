@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.7 2015/01/19 09:14:32 dcoppa Exp $
+--- doc/Makefile.in.orig	Wed Nov 19 05:58:18 2014
++++ doc/Makefile.in	Sun Jan  4 17:06:40 2015
+@@ -329,7 +329,7 @@ build_vendor = @build_vendor@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+-docdir = $(datadir)/doc/icecast
++docdir = $(datadir)/doc/@PACKAGE@
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@

@@ -1,0 +1,34 @@
+# $OpenBSD: Makefile,v 1.4 2015/07/29 17:39:49 jturner Exp $
+
+COMMENT =		create and verify cryptographic signatures
+
+VERSION =		2.1.0
+REVISION =		0
+DISTNAME =		reop-${VERSION}
+CATEGORIES =		security sysutils
+
+MAINTAINER =		James Turner <james@calminferno.net>
+
+HOMEPAGE =		http://www.tedunangst.com/flak/post/reop
+MASTER_SITES =		http://www.tedunangst.com/flak/files/
+EXTRACT_SUFX =		.tgz
+
+# ISC
+PERMIT_PACKAGE_CDROM =	Yes
+
+WANTLIB =		c sodium util
+LIB_DEPENDS =		security/libsodium>=0.7.0
+
+ALL_TARGET =		reop
+MAKE_FLAGS =		CC="${CC}" \
+			CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -lutil -lsodium"
+
+do-test:
+	@cd ${WRKSRC}/tests && sh test.sh
+
+do-install:
+	${INSTALL_MAN} ${WRKSRC}/reop.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/reop ${PREFIX}/bin
+
+.include <bsd.port.mk>

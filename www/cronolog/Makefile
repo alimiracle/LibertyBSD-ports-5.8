@@ -1,0 +1,19 @@
+# $OpenBSD: Makefile,v 1.10 2015/01/22 18:41:17 naddy Exp $
+
+COMMENT=	web log rotation program
+
+DISTNAME=	cronolog-1.6.2
+REVISION=	0
+CATEGORIES=	www
+MASTER_SITES=	http://www.cronolog.org/download/
+
+HOMEPAGE=	http://www.cronolog.org/
+
+# GPL
+PERMIT_PACKAGE_CDROM=   Yes
+WANTLIB=		c 
+
+SEPARATE_BUILD=	Yes
+CONFIGURE_STYLE= gnu
+
+.include <bsd.port.mk>

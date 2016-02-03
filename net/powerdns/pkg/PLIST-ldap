@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-ldap,v 1.2 2015/04/14 18:10:27 florian Exp $
+lib/pdns/libldapbackend.so

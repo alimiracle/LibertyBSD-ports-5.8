@@ -1,0 +1,12 @@
+$OpenBSD: patch-provider_client_ECNotifyMaster_cpp,v 1.6 2015/04/05 22:25:08 robert Exp $
+--- provider/client/ECNotifyMaster.cpp.orig	Thu Mar  5 16:54:03 2015
++++ provider/client/ECNotifyMaster.cpp	Fri Apr  3 23:11:10 2015
+@@ -387,7 +387,7 @@ void* ECNotifyMaster::NotifyWatch(void *pTmpNotifyMast
+ 		notificationArray *pNotifyArray = NULL;
+ 
+ 		hr = pNotifyMaster->m_lpTransport->HrGetNotify(&pNotifyArray);
+-		if (hr == ZARAFA_W_CALL_KEEPALIVE) {
++		if (hr == (int)ZARAFA_W_CALL_KEEPALIVE) {
+ 			if (bReconnect) {
+ 				TRACE_NOTIFY(TRACE_WARNING, "NotifyWatch::Reconnection", "OK connection: %d", pNotifyMaster->m_ulConnection);
+ 				bReconnect = false;

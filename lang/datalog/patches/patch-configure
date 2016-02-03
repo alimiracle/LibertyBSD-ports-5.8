@@ -1,0 +1,24 @@
+$OpenBSD: patch-configure,v 1.4 2015/05/10 19:12:25 jasper Exp $
+
+Correctly link with -lreadline as it need -ltermcap.
+
+--- configure.orig	Thu May  7 14:55:37 2015
++++ configure	Sun May 10 21:10:51 2015
+@@ -11720,7 +11720,7 @@ for ac_lib in '' readline; do
+     ac_res="none required"
+   else
+     ac_res=-l$ac_lib
+-    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
++    LIBS="-l$ac_lib -ltermcap $ac_func_search_save_LIBS"
+   fi
+   if ac_fn_c_try_link "$LINENO"; then :
+   ac_cv_search_readline=$ac_res
+@@ -11743,7 +11743,7 @@ fi
+ $as_echo "$ac_cv_search_readline" >&6; }
+ ac_res=$ac_cv_search_readline
+ if test "$ac_res" != no; then :
+-  test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
++  test "$ac_res" = "none required" || LIBS="$ac_res $LIBS -ltermcap"
+ 
+ fi
+ 

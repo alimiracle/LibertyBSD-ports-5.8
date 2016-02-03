@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_web_applications_web_app_h,v 1.8 2015/07/23 13:44:04 robert Exp $
+--- chrome/browser/web_applications/web_app.h.orig.port	Wed Jul 15 22:29:59 2015
++++ chrome/browser/web_applications/web_app.h	Wed Jul 22 08:37:29 2015
+@@ -222,7 +222,7 @@ typedef std::vector<WebApplicationInfo::IconInfo> Icon
+ void GetIconsInfo(const WebApplicationInfo& app_info, IconInfoList* icons);
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_BSD)
+ // Windows that correspond to web apps need to have a deterministic (and
+ // different) WMClass than normal chrome windows so the window manager groups
+ // them as a separate application.

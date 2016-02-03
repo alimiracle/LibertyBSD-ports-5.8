@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_delete_test,v 1.4 2015/02/10 16:02:05 kspillner Exp $
+--- test/delete.test.orig	Fri Feb 28 07:15:45 2014
++++ test/delete.test	Mon Feb  9 14:00:08 2015
+@@ -79,7 +79,7 @@ Test the delete command.
+ 	# running as root, but you shouldn't do that anyway.
+ 	$ quilt delete "test3"
+ 	> Removing patch %{P}test3
+-	>~ .*find: [`']?\./dir'?: Permission denied
++	>~ ${LOCALBASE}/bin/gfind: [`']?\./dir'?: Permission denied
+ 
+ 	$ chmod a+rx .pc/test3/dir
+ 

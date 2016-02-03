@@ -1,0 +1,48 @@
+$OpenBSD: patch-Wnn_jserver_de_c,v 1.2 2015/07/25 16:47:12 espie Exp $
+--- Wnn/jserver/de.c.orig	Fri Aug 19 03:31:23 1994
++++ Wnn/jserver/de.c	Fri Jul 24 10:33:32 2015
+@@ -61,10 +61,16 @@
+ 
+ #include <ctype.h>
+ #include <errno.h>
+-extern int errno;		/* Pure BSD */
+-
++#include <stdlib.h>
++#include <errno.h>
+ #include <sys/ioctl.h>
++#include <sys/select.h>
++#include <time.h>
++#include <sys/socket.h>
+ 
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
+ #ifdef SYSVR2
+ #include <sys/param.h>
+ #ifndef SIGCHLD
+@@ -187,7 +193,7 @@ int get2_cur();
+ char cmd_name[80];
+ 
+ /* No arguments are used. Only options. */
+-void
++int
+ main(argc, argv)
+ int argc;
+ char **argv;
+@@ -264,7 +270,16 @@ char **argv;
+ 	fclose(stdin);
+ 	fclose(stdout);
+ 	if(!noisy){
++#if !(defined(BSD) && (BSD >= 199306)) /* !4.4BSD-Lite by Taoka */
+ 	    fclose(stderr);
++#else /* 4.4BSD-Lite */
++	    int fd = open("/dev/null", O_WRONLY);
++	    if (fd < 0) {
++		xerror("Cannot open /dev/null\n");
++	    }
++	    dup2(fd, 2);
++	    close(fd);
++#endif /* 4.4BSD-Lite */
+ 	}
+ 
+ #if defined(hpux) || defined(SOLARIS)

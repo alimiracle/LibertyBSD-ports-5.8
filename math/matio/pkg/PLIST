@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:50 naddy Exp $
+include/matio.h
+include/matioConfig.h
+lib/libmatio.a
+lib/libmatio.la
+@lib lib/libmatio.so.${LIBmatio_VERSION}
+lib/pkgconfig/matio.pc
+share/doc/matio/
+share/doc/matio/libmatio.pdf

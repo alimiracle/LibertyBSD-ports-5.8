@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_config_h_in,v 1.2 2015/06/12 09:50:42 dcoppa Exp $
+--- src/config.h.in.orig	Tue Apr  7 12:01:12 2015
++++ src/config.h.in	Fri Jun 12 11:11:45 2015
+@@ -8,6 +8,6 @@
+ 
+ #cmakedefine USE_SHAREDMEMORY_API
+ 
+-#define DEFAULT_CONFIG "${CMAKE_INSTALL_PREFIX}/etc/umurmur.conf"
++#define DEFAULT_CONFIG "${SYSCONFDIR}/umurmur/umurmur.conf"
+ 
+ #endif // CONFIG_H

@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_tuxpaint_c,v 1.2 2014/09/04 11:56:52 ajacoutot Exp $
+
+64-bit time_t
+
+--- src/tuxpaint.c.orig	Thu Sep  4 13:54:51 2014
++++ src/tuxpaint.c	Thu Sep  4 13:54:29 2014
+@@ -12976,9 +12976,9 @@ static void set_chunk_data(unsigned char **chunk_data,
+ 
+   strcat(headers, "Tuxpaint\n");
+   strcat(headers, "Tuxpaint_" VER_VERSION "\n");
+-  sprintf(line, "%d%s", uncompressed_size, "\n");
++  sprintf(line, "%lld%s", uncompressed_size, "\n");
+   strcat(headers, line);
+-  sprintf(line, "%d%s", dataLen, "\n");
++  sprintf(line, "%lld%s", dataLen, "\n");
+   strcat(headers, line);
+ 
+   headersLen = strlen(headers);

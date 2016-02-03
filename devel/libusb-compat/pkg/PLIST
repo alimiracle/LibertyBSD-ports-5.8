@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:43 naddy Exp $
+@conflict libusb-*
+@pkgpath devel/libusb
+bin/libusb-config
+include/usb.h
+lib/libusb.a
+lib/libusb.la
+@lib lib/libusb.so.${LIBusb_VERSION}
+lib/pkgconfig/libusb.pc

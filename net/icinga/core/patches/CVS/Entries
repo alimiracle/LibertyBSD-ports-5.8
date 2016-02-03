@@ -1,0 +1,24 @@
+/patch-cgi_Makefile_in/1.7/Fri Oct 25 16:16:23 2013//
+/patch-sample-config_template-object_contacts_cfg_in/1.1.1.1/Mon Mar 28 14:06:08 2011//
+/patch-Changelog/1.13/Fri Jun 20 17:14:12 2014//
+/patch-base_logging_c/1.2/Sat Jan 17 08:40:20 2015//
+/patch-cgi_notifications_c/1.1/Fri Jan 16 18:07:53 2015//
+/patch-cgi_histogram_c/1.1/Mon Jan 19 16:59:42 2015//
+/patch-cgi_history_c/1.1/Mon Jan 19 16:59:42 2015//
+/patch-cgi_showlog_c/1.1/Mon Jan 19 16:59:42 2015//
+/patch-cgi_trends_c/1.1/Mon Jan 19 16:59:42 2015//
+/patch-common_downtime_c/1.1/Mon Jan 19 16:59:42 2015//
+/patch-module_idoutils_src_logging_c/1.1/Mon Jan 19 16:59:42 2015//
+/patch-xdata_xrddefault_c/1.1/Mon Jan 19 16:59:42 2015//
+/patch-xdata_xsddefault_c/1.1/Mon Jan 19 16:59:42 2015//
+/patch-cgi_cgiutils_c/1.2/Thu Feb  5 08:40:38 2015//
+/patch-base_checks_c/1.2/Tue Mar 31 07:43:07 2015//
+/patch-base_commands_c/1.2/Tue Mar 31 07:43:07 2015//
+/patch-module_idoutils_src_db_c/1.2/Tue Mar 31 07:43:07 2015//
+/patch-module_idoutils_src_idomod_c/1.2/Tue Mar 31 07:43:07 2015//
+/patch-sample-config_icinga_cfg_in/1.12/Tue Mar 31 07:43:07 2015//
+/patch-base_utils_c/1.5/Thu Jul 16 07:46:52 2015//
+/patch-cgi_avail_c/1.2/Thu Jul 16 07:46:52 2015//
+/patch-cgi_cmd_c/1.4/Thu Jul 16 07:46:52 2015//
+/patch-configure/1.16/Thu Jul 16 07:46:52 2015//
+D

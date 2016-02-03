@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.5 2014/09/16 17:28:07 jasper Exp $
+@newgroup _mongodb:670
+@newuser _mongodb:670:670:daemon:MongoDB Account:/nonexistent:/sbin/nologin
+@bin bin/bsondump
+@bin bin/mongo
+@bin bin/mongod
+@bin bin/mongodump
+@bin bin/mongoexport
+@bin bin/mongofiles
+@bin bin/mongoimport
+@bin bin/mongooplog
+@bin bin/mongoperf
+@bin bin/mongorestore
+@bin bin/mongos
+@bin bin/mongosniff
+@bin bin/mongostat
+@bin bin/mongotop
+share/examples/mongodb/
+share/examples/mongodb/mongodb.conf
+@sample ${SYSCONFDIR}/mongodb.conf
+@rcscript ${RCDIR}/mongod
+@mode 750
+@owner _mongodb
+@group _mongodb
+@sample /var/mongodb/
+@sample /var/mongodb/data/
+@sample /var/log/mongodb/

@@ -1,0 +1,15 @@
+--- Makefile.am.orig	Mon May 18 11:57:14 2015
++++ Makefile.am	Sun Jun 28 08:03:14 2015
+@@ -27,10 +27,11 @@ include $(top_srcdir)/config/am_include.mk
+ SUBDIRS=include source
+ 
+ # list files that are documentation to be packaged in a release tarball and installed
+-dist_doc_DATA=COPYING.TXT README.html
++dist_doc_DATA=README.html
+ 
+ # extra data files that are to be pacakged in a release tarball and installed into the data directory
+ #pkgdata_DATA=
++pkgdocdir=$(datadir)/doc/soundtouch
+ 
+ # sets up for soundtouch.m4 to be installed
+ m4datadir=$(datadir)/aclocal

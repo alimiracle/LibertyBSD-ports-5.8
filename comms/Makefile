@@ -1,0 +1,55 @@
+# $OpenBSD: Makefile,v 1.61 2014/12/20 19:32:03 bcallah Exp $
+
+     SUBDIR =
+     SUBDIR += amtterm
+     SUBDIR += birda
+     SUBDIR += bottlerocket
+     SUBDIR += c3270
+     SUBDIR += chirp
+     SUBDIR += colrdx
+     SUBDIR += conserver
+     SUBDIR += conserver,net
+     SUBDIR += dfu-util
+     SUBDIR += efax
+     SUBDIR += fldigi
+     SUBDIR += flipit
+     SUBDIR += gmfsk
+     SUBDIR += gnokii
+     SUBDIR += gpsk31
+     SUBDIR += hamlib
+     SUBDIR += hylafax
+     SUBDIR += hylafax,a4
+     SUBDIR += jpilot
+     SUBDIR += kermit
+     SUBDIR += lcdproc
+     SUBDIR += lrzsz
+     SUBDIR += mgetty+sendfax
+     SUBDIR += minicom
+     SUBDIR += minimodem
+     SUBDIR += obexftp
+     SUBDIR += openobex
+     SUBDIR += owx
+     SUBDIR += p5-Device-Gsm
+     SUBDIR += p5-Device-Modem
+     SUBDIR += p5-Device-SerialPort
+     SUBDIR += p5-SendPage
+     SUBDIR += picocom
+     SUBDIR += pilot-link
+     SUBDIR += qpage
+     SUBDIR += rtl-sdr
+     SUBDIR += scmxx
+     SUBDIR += seyon
+     SUBDIR += smstools
+     SUBDIR += spisniffer
+     SUBDIR += sredird
+     SUBDIR += tkhylafax
+     SUBDIR += tlf
+     SUBDIR += wy60
+     SUBDIR += x3270
+     SUBDIR += xastir
+     SUBDIR += xcept
+     SUBDIR += xdx
+     SUBDIR += xlog
+     SUBDIR += zmtx-zmrx
+
+.include <bsd.port.subdir.mk>

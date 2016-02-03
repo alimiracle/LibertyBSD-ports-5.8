@@ -1,0 +1,23 @@
+/patch-appl_xnlock_xnlock_c/1.1/Sun Jul 13 14:10:13 2014//
+/patch-kadmin_add-random-users_c/1.1/Sun Jul 13 14:10:13 2014//
+/patch-kpasswd_kpasswd-generator_c/1.1/Sun Jul 13 14:10:13 2014//
+/patch-kuser_generate-requests_c/1.1/Sun Jul 13 14:10:13 2014//
+/patch-kuser_kswitch_1/1.1/Sun Jul 13 14:10:13 2014//
+/patch-lib_com_err_com_right_h/1.1/Sun Jul 13 14:10:13 2014//
+/patch-lib_gssapi_spnego_external_c/1.1/Sun Jul 13 14:10:13 2014//
+/patch-lib_hcrypto_rand_h/1.1/Sun Jul 13 14:10:13 2014//
+/patch-lib_hcrypto_randi_h/1.1/Sun Jul 13 14:10:13 2014//
+/patch-lib_hcrypto_test_rsa_c/1.1/Sun Jul 13 14:10:13 2014//
+/patch-lib_hx509_ref_pkcs11_h/1.1/Sun Jul 13 14:10:13 2014//
+/patch-lib_hx509_softp11_c/1.1/Sun Jul 13 14:10:13 2014//
+/patch-lib_ipc_server_c/1.1/Sun Jul 13 14:10:13 2014//
+/patch-lib_krb5_crypto-rand_c/1.1/Sun Jul 13 14:10:13 2014//
+/patch-lib_krb5_krb5_h/1.1/Sun Jul 13 14:10:13 2014//
+/patch-lib_krb5_test_crypto_c/1.1/Sun Jul 13 14:10:14 2014//
+/patch-lib_krb5_test_rfc3961_c/1.1/Sun Jul 13 14:10:14 2014//
+/patch-lib_libedit_src_unvis_c/1.1/Sun Jul 13 14:10:14 2014//
+/patch-lib_libedit_src_vis_c/1.1/Sun Jul 13 14:10:14 2014//
+/patch-lib_roken_rand_c/1.1/Sun Jul 13 14:10:14 2014//
+/patch-lib_sqlite_sqlite3_c/1.1/Sun Jul 13 14:10:14 2014//
+/patch-appl_Makefile_in/1.1/Mon Jul 28 09:49:44 2014//
+D

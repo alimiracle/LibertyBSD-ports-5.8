@@ -1,0 +1,24 @@
+/patch-config_php_default/1.1.1.1/Thu Apr 23 16:44:34 2015//
+/patch-scripts_agent-local_bind/1.1.1.1/Thu Apr 23 16:44:34 2015//
+/patch-scripts_agent-local_dmi/1.1.1.1/Thu Apr 23 16:44:34 2015//
+/patch-scripts_agent-local_tinydns/1.1.1.1/Thu Apr 23 16:44:34 2015//
+/patch-scripts_cron-hourly_sh/1.1.1.1/Thu Apr 23 16:44:34 2015//
+/patch-scripts_cron-minute_sh/1.1.1.1/Thu Apr 23 16:44:34 2015//
+/patch-scripts_cron_sh/1.1.1.1/Thu Apr 23 16:44:34 2015//
+/patch-scripts_distro/1.1.1.1/Thu Apr 23 16:44:34 2015//
+/patch-scripts_get-geshi_sh/1.1.1.1/Thu Apr 23 16:44:34 2015//
+/patch-scripts_get-jpgraph_sh/1.1.1.1/Thu Apr 23 16:44:34 2015//
+/patch-scripts_postfix-queues/1.1.1.1/Thu Apr 23 16:44:34 2015//
+/patch-daily_sh/1.2/Fri Jun 26 07:45:05 2015//
+/patch-alerts_php/1.2/Thu Jul 16 07:47:06 2015//
+/patch-html_index_php/1.2/Thu Jul 16 07:47:06 2015//
+/patch-html_install_php/1.5/Thu Jul 16 07:47:06 2015//
+/patch-includes_defaults_inc_php/1.5/Thu Jul 16 07:47:06 2015//
+/patch-includes_definitions_inc_php/1.6/Thu Jul 16 07:47:06 2015//
+/patch-librenms_nonroot_cron/1.1/Thu Jul 16 02:50:33 2015//
+/patch-poller-wrapper_py/1.4/Thu Jul 16 07:47:06 2015//
+/patch-scripts_ntp-client_php/1.2/Thu Jul 16 07:47:06 2015//
+/patch-scripts_ntpd-server_php/1.2/Thu Jul 16 07:47:06 2015//
+/patch-scripts_powerdns_php/1.2/Thu Jul 16 07:47:06 2015//
+/patch-validate_php/1.2/Thu Jul 16 07:47:06 2015//
+D

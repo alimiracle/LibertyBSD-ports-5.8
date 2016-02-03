@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_status_cpp,v 1.6 2015/07/06 06:04:57 dcoppa Exp $
+
+missing header
+
+--- src/status.cpp.orig	Sat May  2 21:16:11 2015
++++ src/status.cpp	Fri Jun 19 16:32:23 2015
+@@ -21,6 +21,7 @@
+ #include <boost/date_time/posix_time/posix_time.hpp>
+ #include <netinet/tcp.h>
+ #include <netinet/in.h>
++#include <sys/socket.h>
+ 
+ #include "browser.h"
+ #include "charset.h"

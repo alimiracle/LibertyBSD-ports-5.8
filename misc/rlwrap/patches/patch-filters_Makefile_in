@@ -1,0 +1,32 @@
+$OpenBSD: patch-filters_Makefile_in,v 1.4 2015/03/15 10:07:59 jasper Exp $
+--- filters/Makefile.in.orig	Fri Nov 14 11:17:00 2014
++++ filters/Makefile.in	Thu Mar 12 20:38:48 2015
+@@ -133,7 +133,7 @@ am__uninstall_files_from_dir = { \
+     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
+          $(am__cd) "$$dir" && rm -f $$files; }; \
+   }
+-man3dir = $(mandir)/man3
++man3dir = $(mandir)/man3p
+ am__installdirs = "$(DESTDIR)$(man3dir)"
+ NROFF = nroff
+ MANS = $(man_MANS)
+@@ -238,7 +238,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-man_MANS = RlwrapFilter.3pm
++man_MANS = RlwrapFilter.3p
+ all: all-am
+ 
+ .SUFFIXES:
+@@ -476,8 +476,8 @@ uninstall-man: uninstall-man3
+ 
+ # CLEANFILES = $(man_MANS)
+ 
+-RlwrapFilter.3pm: RlwrapFilter.pm
+-	pod2man --section=3pm RlwrapFilter.pm > RlwrapFilter.3pm
++RlwrapFilter.3p: RlwrapFilter.pm
++	pod2man --section=3p RlwrapFilter.pm > RlwrapFilter.3p
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

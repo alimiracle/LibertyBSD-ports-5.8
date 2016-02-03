@@ -1,0 +1,10 @@
+/patch-src_Makefile_shlib/1.10/Thu Jan  8 18:30:43 2015//
+/patch-src_backend_storage_lmgr_s_lock_c/1.2/Thu Jan  8 18:30:43 2015//
+/patch-src_interfaces_ecpg_compatlib_Makefile/1.9/Thu Jan  8 18:30:43 2015//
+/patch-src_interfaces_ecpg_ecpglib_Makefile/1.9/Thu Jan  8 18:30:43 2015//
+/patch-src_interfaces_ecpg_pgtypeslib_Makefile/1.9/Thu Jan  8 18:30:43 2015//
+/patch-src_interfaces_libpq_Makefile/1.11/Thu Jan  8 18:30:43 2015//
+/patch-src_include_storage_barrier_h/1.1/Fri Jan 16 23:24:15 2015//
+/patch-src_include_storage_s_lock_h/1.2/Sat Jan 17 08:30:58 2015//
+/patch-src_backend_libpq_ip_c/1.1/Wed Feb 18 17:49:56 2015//
+D

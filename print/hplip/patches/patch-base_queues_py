@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_queues_py,v 1.6 2015/06/11 06:25:07 ajacoutot Exp $
+--- base/queues.py.orig	Sun Jun  7 21:25:25 2015
++++ base/queues.py	Thu Jun 11 08:11:35 2015
+@@ -122,7 +122,7 @@ def parseQueues(mode):
+                     is_hp = True
+ 
+             log.debug("Device URI: %s" % device_uri)
+-            ppd_file = os.path.join('/etc/cups/ppd', printer_name + '.ppd')
++            ppd_file = os.path.join('${SYSCONFDIR}/cups/ppd', printer_name + '.ppd')
+             ppd_fileType = None
+             PPDFileError = False
+             if not os.path.exists(ppd_file):

@@ -1,0 +1,45 @@
+@comment $OpenBSD: PLIST-main,v 1.6 2014/10/08 13:46:16 nigel Exp $
+@bin bin/weechat
+bin/weechat-curses
+include/weechat/
+include/weechat/weechat-plugin.h
+lib/pkgconfig/weechat.pc
+lib/weechat/
+lib/weechat/plugins/
+lib/weechat/plugins/alias.so
+lib/weechat/plugins/charset.so
+lib/weechat/plugins/exec.so
+lib/weechat/plugins/fifo.so
+lib/weechat/plugins/irc.so
+lib/weechat/plugins/logger.so
+lib/weechat/plugins/perl.so
+lib/weechat/plugins/relay.so
+lib/weechat/plugins/script.so
+lib/weechat/plugins/trigger.so
+lib/weechat/plugins/xfer.so
+@man man/man1/weechat.1
+share/doc/weechat/
+share/doc/weechat/weechat_dev.en.asciidoc
+share/doc/weechat/weechat_faq.en.asciidoc
+share/doc/weechat/weechat_plugin_api.en.asciidoc
+share/doc/weechat/weechat_quickstart.en.asciidoc
+share/doc/weechat/weechat_relay_protocol.en.asciidoc
+share/doc/weechat/weechat_scripting.en.asciidoc
+share/doc/weechat/weechat_tester.en.asciidoc
+share/doc/weechat/weechat_user.en.asciidoc
+@comment share/icons/
+@comment share/icons/hicolor/
+@comment share/icons/hicolor/32x32/
+@comment share/icons/hicolor/32x32/apps/
+@comment share/icons/hicolor/32x32/apps/weechat.png
+share/locale/cs/LC_MESSAGES/weechat.mo
+share/locale/de/LC_MESSAGES/weechat.mo
+share/locale/es/LC_MESSAGES/weechat.mo
+share/locale/fr/LC_MESSAGES/weechat.mo
+share/locale/hu/LC_MESSAGES/weechat.mo
+share/locale/it/LC_MESSAGES/weechat.mo
+share/locale/ja/LC_MESSAGES/weechat.mo
+share/locale/pl/LC_MESSAGES/weechat.mo
+share/locale/pt_BR/LC_MESSAGES/weechat.mo
+share/locale/ru/LC_MESSAGES/weechat.mo
+share/locale/tr/LC_MESSAGES/weechat.mo

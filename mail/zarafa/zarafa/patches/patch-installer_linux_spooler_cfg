@@ -1,0 +1,47 @@
+$OpenBSD: patch-installer_linux_spooler_cfg,v 1.9 2015/04/05 22:25:08 robert Exp $
+--- installer/linux/spooler.cfg.orig	Sun Apr  5 17:47:15 2015
++++ installer/linux/spooler.cfg	Sun Apr  5 17:48:05 2015
+@@ -11,16 +11,16 @@ smtp_port = 25
+ server_socket	=	file:///var/run/zarafa
+ 
+ # drop privileges and run the process as this user
+-run_as_user = 
++run_as_user = _zarafa
+ 
+ # drop privileges and run the process as this group
+-run_as_group = 
++run_as_group = _zarafa
+ 
+ # create a pid file for stopping the service via the init.d scripts
+ pid_file = /var/run/zarafa-spooler.pid
+ 
+ # run server in this path (when not using the -F switch)
+-running_path = /
++running_path = /var/empty
+ 
+ # create memory coredumps upon crash in the running_path directory
+ coredump_enabled = no
+@@ -48,7 +48,7 @@ log_timestamp	=	1
+ #       to use this type of login method
+ 
+ # Login to the Zarafa server using this SSL Key
+-#sslkey_file = /etc/zarafa/ssl/spooler.pem
++#sslkey_file = ${SYSCONFDIR}/zarafa/ssl/spooler.pem
+ 
+ # The password of the SSL Key
+ #sslkey_pass = replace-with-server-cert-password
+@@ -143,7 +143,7 @@ archive_on_send = no
+ plugin_enabled = yes
+ 
+ # Path to the spooler plugin manager
+-plugin_manager_path = /usr/share/zarafa-spooler/python
++plugin_manager_path = ${PREFIX}/share/zarafa-spooler/python
+ 
+ # Path to the activated spooler plugins.
+ #   This folder contains symlinks to the zarafa plugins and custom scripts. The plugins are
+@@ -152,4 +152,4 @@ plugin_manager_path = /usr/share/zarafa-spooler/python
+ #
+ # Example:
+ #  $ ln -s /usr/share/zarafa-spooler/python/plugins/disclaimer.py /var/lib/zarafa/spooler/plugins/disclaimer.py
+-plugin_path = /var/lib/zarafa/spooler/plugins
++plugin_path = /var/db/zarafa/spooler/plugins

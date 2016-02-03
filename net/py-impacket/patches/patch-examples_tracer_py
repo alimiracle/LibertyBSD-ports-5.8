@@ -1,0 +1,12 @@
+$OpenBSD: patch-examples_tracer_py,v 1.2 2015/06/04 08:03:49 dcoppa Exp $
+--- examples/tracer.py.orig	Sat Apr 25 19:41:23 2015
++++ examples/tracer.py	Thu Jun  4 09:25:06 2015
+@@ -284,7 +284,7 @@ class ParallelCoordinates(Tkinter.Canvas):
+ 
+ 
+ class Tracer:
+-    def __init__(self, interface = 'eth0', filter = ''):
++    def __init__(self, interface = 'em0', filter = ''):
+         print "Tracing interface %s with filter `%s'." % (interface, filter)
+ 
+         self.tk = Tkinter.Tk()

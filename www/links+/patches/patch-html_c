@@ -1,0 +1,11 @@
+$OpenBSD: patch-html_c,v 1.14 2015/01/01 15:19:49 bcallah Exp $
+--- html.c.orig	Sun Dec  7 13:39:00 2014
++++ html.c	Fri Dec 26 11:41:31 2014
+@@ -981,6 +981,7 @@ static void html_a(unsigned char *a)
+ 			format_.target = stracpy(format_.target_base);
+ 		}
+ 		/*format_.attr ^= AT_BOLD;*/
++		format_.attr |= AT_UNDERLINE;
+ 		set_link_attr();
+ 	} else if (!ev) kill_html_stack_item(&html_top);
+ 	if ((al = get_attr_val(a, cast_uchar "name"))) {

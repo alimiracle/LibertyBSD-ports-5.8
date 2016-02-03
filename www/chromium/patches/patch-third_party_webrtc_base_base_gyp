@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_webrtc_base_base_gyp,v 1.6 2015/07/23 13:44:04 robert Exp $
+--- third_party/webrtc/base/base.gyp.orig.port	Wed Jul 15 22:32:12 2015
++++ third_party/webrtc/base/base.gyp	Wed Jul 22 08:37:30 2015
+@@ -606,8 +606,6 @@
+         ['use_x11 == 1', {
+           'link_settings': {
+             'libraries': [
+-              '-ldl',
+-              '-lrt',
+               '-lXext',
+               '-lX11',
+               '-lXcomposite',

@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.5 2015/03/16 18:07:36 naddy Exp $
+@conflict mad-*
+include/id3tag.h
+lib/libid3tag.a
+lib/libid3tag.la
+@lib lib/libid3tag.so.${LIBid3tag_VERSION}
+lib/pkgconfig/id3tag.pc

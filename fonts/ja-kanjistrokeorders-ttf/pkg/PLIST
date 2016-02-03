@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.4 2015/05/02 19:32:54 ajacoutot Exp $
+@pkgpath japanese/kanjistrokeorders-ttf
+share/fonts/
+@fontdir share/fonts/KanjiStrokeOrders/
+share/fonts/KanjiStrokeOrders/KanjiStrokeOrders_v3.001.ttf
+share/fonts/KanjiStrokeOrders/copyright.txt

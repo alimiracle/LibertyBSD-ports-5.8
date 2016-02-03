@@ -1,0 +1,15 @@
+$OpenBSD: patch-chrome_common_extensions_api_schemas_gypi,v 1.6 2015/07/23 13:44:04 robert Exp $
+--- chrome/common/extensions/api/schemas.gypi.orig.port	Wed Jul 15 22:29:59 2015
++++ chrome/common/extensions/api/schemas.gypi	Wed Jul 22 08:37:29 2015
+@@ -165,6 +165,11 @@
+           '<@(webrtc_schema_files)',
+         ],
+       }],
++      ['enable_webrtc==0', {
++        'schema_files': [
++          'webrtc_logging_private.idl',
++        ],
++      }],
+     ],
+     'cc_dir': 'chrome/common/extensions/api',
+     'root_namespace': 'extensions::api::%(namespace)s',

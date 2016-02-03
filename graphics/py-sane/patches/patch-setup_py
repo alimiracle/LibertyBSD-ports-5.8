@@ -1,0 +1,13 @@
+$OpenBSD: patch-setup_py,v 1.2 2015/06/05 15:13:40 ajacoutot Exp $
+--- setup.py.orig	Fri Mar 27 23:15:18 2015
++++ setup.py	Fri Jun  5 17:08:35 2015
+@@ -1,7 +1,8 @@
+ from distutils.core import setup, Extension
+ 
+ sane = Extension('_sane',
+-                 include_dirs = [],
++                 include_dirs = [ '${LOCALBASE}/include' ],
++                 library_dirs = ['${LOCALBASE}/lib'],
+                  libraries = ['sane'],
+                  define_macros = [],
+                  extra_compile_args = [],

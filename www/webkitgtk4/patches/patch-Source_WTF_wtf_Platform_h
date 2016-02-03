@@ -1,0 +1,47 @@
+$OpenBSD: patch-Source_WTF_wtf_Platform_h,v 1.4 2015/03/27 18:38:45 ajacoutot Exp $
+
+https://bugs.webkit.org/show_bug.cgi?id=129963
+
+--- Source/WTF/wtf/Platform.h.orig	Mon Mar 23 09:08:04 2015
++++ Source/WTF/wtf/Platform.h	Fri Mar 27 10:17:17 2015
+@@ -153,6 +153,12 @@
+ #define WTF_CPU_BIG_ENDIAN 1
+ #endif
+ 
++/* CPU(SPARC64) - SPARC V9 */
++#if defined(__sparc64__)
++#define WTF_CPU_SPARC64 1
++#define WTF_CPU_BIG_ENDIAN 1
++#endif
++
+ /* CPU(X86) - i386 / x86 32-bit */
+ #if   defined(__i386__) \
+     || defined(i386)     \
+@@ -340,7 +346,7 @@
+ 
+ #endif /* ARM */
+ 
+-#if CPU(ARM) || CPU(MIPS) || CPU(SH4)
++#if CPU(ARM) || CPU(MIPS) || CPU(SH4) || CPU(SPARC64)
+ #define WTF_CPU_NEEDS_ALIGNED_ACCESS 1
+ #endif
+ 
+@@ -653,7 +659,8 @@
+     || CPU(S390X) \
+     || CPU(MIPS64) \
+     || CPU(PPC64) \
+-    || CPU(PPC64LE)
++    || CPU(PPC64LE) \
++    || CPU(SPARC64)
+ #define WTF_USE_JSVALUE64 1
+ #else
+ #define WTF_USE_JSVALUE32_64 1
+@@ -720,7 +727,7 @@
+ 
+ #if !defined(ENABLE_DFG_JIT) && ENABLE(JIT)
+ /* Enable the DFG JIT on X86 and X86_64. */
+-#if (CPU(X86) || CPU(X86_64)) && (OS(DARWIN) || OS(LINUX) || OS(FREEBSD) || OS(WINDOWS) || OS(HURD))
++#if (CPU(X86) || CPU(X86_64)) && (OS(DARWIN) || OS(LINUX) || OS(FREEBSD) || OS(OPENBSD) || OS(WINDOWS) || OS(HURD))
+ #define ENABLE_DFG_JIT 1
+ #endif
+ /* Enable the DFG JIT on ARMv7.  Only tested on iOS and Qt/GTK+ Linux. */

@@ -1,0 +1,27 @@
+$OpenBSD: patch-ext_ed_cpp,v 1.2 2015/01/10 17:29:14 jeremy Exp $
+--- ext/ed.cpp.orig	Wed Dec 31 16:00:00 1969
++++ ext/ed.cpp	Fri Nov 28 18:16:12 2014
+@@ -1018,11 +1018,8 @@ void ConnectionDescriptor::_WriteOutboundData()
+ 	}
+ 	#endif
+ 
+-	// We should never have gotten here if there were no data to write,
+-	// so assert that as a sanity check.
+-	// Don't bother to make sure nbytes is less than output_buffer because
+-	// if it were we probably would have crashed already.
+-	assert (nbytes > 0);
++	if (nbytes <= 0)
++		return;
+ 
+ 	assert (GetSocket() != INVALID_SOCKET);
+ 	#ifdef HAVE_WRITEV
+@@ -1687,6 +1684,9 @@ void DatagramDescriptor::Write()
+ 	EpollEvent.events = (EPOLLIN | (SelectForWrite() ? EPOLLOUT : 0));
+ 	assert (MyEventMachine);
+ 	MyEventMachine->Modify (this);
++	#endif
++	#ifdef HAVE_KQUEUE
++	MyEventMachine->ArmKqueueWriter (this);
+ 	#endif
+ 	#ifdef HAVE_KQUEUE
+ 	if (SelectForWrite())

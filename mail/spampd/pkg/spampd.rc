@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: spampd.rc,v 1.2 2014/11/27 12:37:29 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/sbin/spampd"
+daemon_flags="--a --aw --p=/var/spampd/spampd.pid"
+
+. /etc/rc.d/rc.subr
+
+pexp="/usr/bin/perl -T ${daemon}${daemon_flags:+ ${daemon_flags}}"
+
+rc_cmd $1

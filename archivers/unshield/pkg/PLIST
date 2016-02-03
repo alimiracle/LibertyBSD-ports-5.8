@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.4 2015/05/22 11:31:10 ajacoutot Exp $
+@bin bin/unshield
+include/libunshield.h
+lib/libunshield.a
+lib/libunshield.la
+@lib lib/libunshield.so.${LIBunshield_VERSION}
+lib/pkgconfig/libunshield.pc
+@man man/man1/unshield.1

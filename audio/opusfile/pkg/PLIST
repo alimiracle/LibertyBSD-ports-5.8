@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.2 2015/05/22 11:31:11 ajacoutot Exp $
+include/opus/
+include/opus/opusfile.h
+lib/libopusfile.a
+lib/libopusfile.la
+@lib lib/libopusfile.so.${LIBopusfile_VERSION}
+lib/libopusurl.a
+lib/libopusurl.la
+@lib lib/libopusurl.so.${LIBopusurl_VERSION}
+lib/pkgconfig/opusfile.pc
+lib/pkgconfig/opusurl.pc
+share/doc/opusfile/
+share/doc/opusfile/AUTHORS
+share/doc/opusfile/COPYING
+share/doc/opusfile/README.txt

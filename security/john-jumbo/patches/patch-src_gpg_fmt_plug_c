@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gpg_fmt_plug_c,v 1.4 2015/01/18 11:57:22 sthen Exp $
+--- src/gpg_fmt_plug.c.orig	Thu Dec 18 00:59:02 2014
++++ src/gpg_fmt_plug.c	Sun Jan 18 04:51:59 2015
+@@ -54,6 +54,10 @@ john_register_one(&fmt_gpg);
+ #include "stdint.h"
+ #include "memdbg.h"
+ 
++#ifndef C_Block
++#define C_Block DES_cblock
++#endif
++
+ #define FORMAT_LABEL        "gpg"
+ #define FORMAT_NAME         "OpenPGP / GnuPG Secret Key"
+ #define ALGORITHM_NAME      "32/" ARCH_BITS_STR

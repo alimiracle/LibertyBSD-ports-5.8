@@ -1,0 +1,12 @@
+$OpenBSD: patch-cogl_winsys_cogl-winsys-egl-kms_c,v 1.6 2015/04/03 16:31:24 jasper Exp $
+--- cogl/winsys/cogl-winsys-egl-kms.c.orig	Mon Feb 23 19:36:56 2015
++++ cogl/winsys/cogl-winsys-egl-kms.c	Fri Apr  3 11:33:43 2015
+@@ -115,7 +115,7 @@ typedef struct _CoglOnscreenKMS
+   struct gbm_surface *pending_surface;
+ } CoglOnscreenKMS;
+ 
+-static const char device_name[] = "/dev/dri/card0";
++static const char device_name[] = "/dev/drm0";
+ 
+ static void
+ _cogl_winsys_renderer_disconnect (CoglRenderer *renderer)

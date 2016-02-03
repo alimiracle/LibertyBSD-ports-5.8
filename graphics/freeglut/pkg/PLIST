@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.2 2015/03/16 18:07:46 naddy Exp $
+@conflict glut-*
+@pkgpath graphics/glut
+include/GL/
+include/GL/freeglut.h
+include/GL/freeglut_ext.h
+include/GL/freeglut_std.h
+include/GL/glut.h
+lib/libglut.a
+lib/libglut.la
+@lib lib/libglut.so.${LIBglut_VERSION}

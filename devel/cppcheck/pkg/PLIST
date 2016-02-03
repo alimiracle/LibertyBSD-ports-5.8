@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.6 2015/05/02 11:56:14 gsoares Exp $
+@bin bin/cppcheck
+@man man/man1/cppcheck.1
+share/cppcheck/
+share/cppcheck/cfg/
+share/cppcheck/cfg/avr.cfg
+share/cppcheck/cfg/cppcheck-cfg.rng
+share/cppcheck/cfg/gnu.cfg
+share/cppcheck/cfg/gtk.cfg
+share/cppcheck/cfg/microsoft_sal.cfg
+share/cppcheck/cfg/posix.cfg
+share/cppcheck/cfg/qt.cfg
+share/cppcheck/cfg/sdl.cfg
+share/cppcheck/cfg/std.cfg
+share/cppcheck/cfg/windows.cfg

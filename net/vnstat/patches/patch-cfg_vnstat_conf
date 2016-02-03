@@ -1,0 +1,12 @@
+$OpenBSD: patch-cfg_vnstat_conf,v 1.2 2015/01/05 09:46:42 jasper Exp $
+--- cfg/vnstat.conf.orig	Thu Aug 28 22:23:58 2014
++++ cfg/vnstat.conf	Sat Jan  3 14:39:44 2015
+@@ -2,7 +2,7 @@
+ ##
+ 
+ # default interface
+-Interface "eth0"
++Interface "lo0"
+ 
+ # location of the database directory
+ DatabaseDir "/var/lib/vnstat"

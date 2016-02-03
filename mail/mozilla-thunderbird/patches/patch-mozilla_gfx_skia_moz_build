@@ -1,0 +1,20 @@
+$OpenBSD: patch-mozilla_gfx_skia_moz_build,v 1.2 2015/07/05 20:18:06 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=1028827
+--- mozilla/gfx/skia/moz.build.orig	Wed Mar 11 08:56:24 2015
++++ mozilla/gfx/skia/moz.build	Thu Mar 19 21:04:03 2015
+@@ -913,6 +913,7 @@ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('android', 'gtk2',
+ 
+ if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['HAVE_TOOLCHAIN_SUPPORT_MSSSE3']:
+     DEFINES['SK_BUILD_SSSE3'] = 1
++    SOURCES['trunk/src/opts/SkBitmapProcState_opts_SSSE3.cpp'].flags += ['-mssse3']
+ 
+ if CONFIG['MOZ_WIDGET_TOOLKIT'] in ('android', 'gonk'):
+     DEFINES['SK_FONTHOST_CAIRO_STANDALONE'] = 0
+@@ -943,7 +944,6 @@ if CONFIG['_MSC_VER']:
+ if CONFIG['INTEL_ARCHITECTURE'] and CONFIG['GNU_CC']:
+     SOURCES['trunk/src/opts/SkBitmapFilter_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+     SOURCES['trunk/src/opts/SkBitmapProcState_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+-    SOURCES['trunk/src/opts/SkBitmapProcState_opts_SSSE3.cpp'].flags += ['-mssse3']
+     SOURCES['trunk/src/opts/SkBlitRect_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+     SOURCES['trunk/src/opts/SkBlitRow_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']
+     SOURCES['trunk/src/opts/SkBlurImage_opts_SSE2.cpp'].flags += CONFIG['SSE2_FLAGS']

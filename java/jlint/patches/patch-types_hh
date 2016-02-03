@@ -1,0 +1,15 @@
+$OpenBSD: patch-types_hh,v 1.4 2015/06/17 19:06:58 jasper Exp $
+--- types.hh.orig	Fri Oct 13 08:52:50 2006
++++ types.hh	Wed Jun 17 21:03:25 2015
+@@ -2,10 +2,10 @@
+ #define TYPES_HH
+ 
+ #ifdef VISUAL_CPP
+-#include <assert.h>
+ #pragma warning( disable : 4786)
+ #endif
+ 
++#include <cassert>
+ #include <string>
+ #include <vector>
+ #include <stddef.h>

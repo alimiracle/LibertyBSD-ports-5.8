@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.13 2015/07/02 09:32:16 bluhm Exp $
+${P5ARCH}/XML/LibXSLT.pm
+${P5ARCH}/auto/XML/LibXSLT/
+${P5ARCH}/auto/XML/LibXSLT/LibXSLT.so
+@man man/man3p/XML::LibXSLT.3p

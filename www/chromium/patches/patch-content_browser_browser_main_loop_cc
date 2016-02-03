@@ -1,0 +1,30 @@
+$OpenBSD: patch-content_browser_browser_main_loop_cc,v 1.28 2015/07/23 13:44:04 robert Exp $
+--- content/browser/browser_main_loop.cc.orig.port	Wed Jul 15 22:30:02 2015
++++ content/browser/browser_main_loop.cc	Wed Jul 22 08:37:29 2015
+@@ -157,7 +157,7 @@
+ namespace content {
+ namespace {
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+ void SetupSandbox(const base::CommandLine& parsed_command_line) {
+   TRACE_EVENT0("startup", "SetupSandbox");
+   base::FilePath sandbox_binary;
+@@ -433,7 +433,7 @@ void BrowserMainLoop::EarlyInitialization() {
+   TRACE_EVENT0("startup", "BrowserMainLoop::EarlyInitialization");
+   TRACK_SCOPED_REGION("Startup", "BrowserMainLoop::EarlyInitialization");
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+   // No thread should be created before this call, as SetupSandbox()
+   // will end-up using fork().
+   SetupSandbox(parsed_command_line_);
+@@ -951,7 +951,7 @@ void BrowserMainLoop::ShutdownThreadsAndCleanUp() {
+   }
+ #endif
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID) && !defined(OS_BSD)
+   ZygoteHostImpl::GetInstance()->TearDownAfterLastChild();
+ #endif  // defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_ANDROID)
+ 

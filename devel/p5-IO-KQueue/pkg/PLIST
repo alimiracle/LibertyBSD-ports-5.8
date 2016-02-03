@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.4 2015/07/16 23:57:22 ajacoutot Exp $
+${P5ARCH}/
+${P5ARCH}/IO/
+${P5ARCH}/IO/KQueue.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/IO/
+${P5ARCH}/auto/IO/KQueue/
+${P5ARCH}/auto/IO/KQueue/KQueue.so
+@man man/man3p/IO::KQueue.3p
+share/examples/p5-IO-KQueue/
+share/examples/p5-IO-KQueue/chat.pl
+share/examples/p5-IO-KQueue/tail.pl

@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.2 2015/01/10 12:44:01 sthen Exp $
+@shell bin/nsh
+bin/save-ro.sh
+bin/save-rw.sh
+bin/save.sh
+share/doc/nsh/
+share/doc/nsh/COPYRIGHT
+share/doc/nsh/MANUAL
+share/doc/nsh/README
+share/doc/nsh/TODO

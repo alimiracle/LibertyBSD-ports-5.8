@@ -1,0 +1,56 @@
+$OpenBSD: patch-Configure,v 1.36 2015/03/24 21:26:09 sthen Exp $
+--- Configure.orig	Mon Oct 13 23:31:13 2014
++++ Configure	Tue Mar 24 21:23:04 2015
+@@ -3923,9 +3923,10 @@ return(0); }
+ 	echo "!!!WARNING!!!  Configuring for OpenBSD 3.9"
+ 	;;
+       *)
++	LSOF_TSTBIGF=" "
+ 	echo "Unknown OpenBSD release: $LSOF_VSTR"
+-	echo Assuming OpenBSD 3.9
+-	LSOF_VERS=3090
++	echo Assuming OpenBSD 5.0
++	LSOF_VERS=5000
+ 	;;
+       esac	# }
+     fi	# }
+@@ -3933,7 +3934,7 @@ return(0); }
+     # Test for legal OpenBSD version.
+ 
+     case $LSOF_VERS in	# {
+-    1020|2050|2060|2070|2080|2090|3000|3010|3020|3030|3040|3050|3060|3070|3080|3090)
++    1020|2050|2060|2070|2080|2090|3000|3010|3020|3030|3040|3050|3060|3070|3080|3090|5000)
+       ;;
+     *)
+       echo "Unknown OpenBSD version: $LSOF_VERS"
+@@ -3995,11 +3996,6 @@ return(0); }
+ 	LSOF_TMP1=1
+       fi	# }
+     fi	# }
+-    if test -d ${OPENBSD_SYS}/miscfs/procfs	# {
+-    then
+-      LSOF_CFGF="$LSOF_CFGF -DHASPROCFS"
+-      LSOF_TMP1=1
+-    fi	# }
+     if test -d ${OPENBSD_SYS}/isofs/cd9660	# {
+     then
+       LSOF_CFGF="$LSOF_CFGF -DHAS9660FS=1"
+@@ -4173,6 +4169,18 @@ return(0); }
+     if test -r ${LSOF_INCLUDE}/sys/pipe.h	# {
+     then
+       LSOF_CFGF="$LSOF_CFGF -DHAS_SYS_PIPEH"
++    fi	# }
++    if test -r ${LSOF_INCLUDE}/kvm.h	# {
++    then
++      grep -q kvm_getproc2 ${LSOF_INCLUDE}/kvm.h
++      if test $? -eq 0	# {
++      then
++	  LSOF_CFGF="$LSOF_CFGF -DHASKVMGETPROC2"
++      fi	# }
++    fi	# }
++    if test -r ${LSOF_INCLUDE}/kvm.h -a $LSOF_VERS -ge 5000	# {
++    then
++      LSOF_CFGF="$LSOF_CFGF -DHASKVMGETPROC2 -DHASKVMGETPROCS"
+     fi	# }
+     LSOF_CFGL="$LSOF_CFGL -lkvm"
+     LSOF_DIALECT_DIR=n+obsd

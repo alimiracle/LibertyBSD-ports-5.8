@@ -1,0 +1,12 @@
+$OpenBSD: patch-libs_maildir_Makefile_in,v 1.2 2015/04/28 07:20:02 giovanni Exp $
+--- libs/maildir/Makefile.in.orig	Sat Dec 13 15:21:33 2014
++++ libs/maildir/Makefile.in	Sat Apr  4 23:23:25 2015
+@@ -575,7 +575,7 @@ clean-noinstLTLIBRARIES:
+ 	}
+ 
+ libmaildir.la: $(libmaildir_la_OBJECTS) $(libmaildir_la_DEPENDENCIES) $(EXTRA_libmaildir_la_DEPENDENCIES) 
+-	$(AM_V_CXXLD)$(CXXLINK)  $(libmaildir_la_OBJECTS) $(libmaildir_la_LIBADD) $(LIBS)
++	$(AM_V_CXXLD)$(CXXLINK)  $(libmaildir_la_OBJECTS) $(libmaildir_la_LIBADD) $(LIBS) $(LIBPCRE)
+ 
+ clean-noinstPROGRAMS:
+ 	@list='$(noinst_PROGRAMS)'; test -n "$$list" || exit 0; \

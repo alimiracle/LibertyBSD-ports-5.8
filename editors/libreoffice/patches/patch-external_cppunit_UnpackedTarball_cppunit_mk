@@ -1,0 +1,14 @@
+$OpenBSD: patch-external_cppunit_UnpackedTarball_cppunit_mk,v 1.2 2015/05/03 11:30:33 robert Exp $
+--- external/cppunit/UnpackedTarball_cppunit.mk.orig.port	Thu Jan 22 21:05:28 2015
++++ external/cppunit/UnpackedTarball_cppunit.mk	Sat Jan 31 16:03:15 2015
+@@ -24,6 +24,10 @@ ifeq ($(DISABLE_DYNLOADING),TRUE)
+ $(eval $(call gb_UnpackedTarball_add_patches,cppunit,\
+ 	external/cppunit/disable-dynloading.patch \
+ ))
++else ifeq ($(OS),OPENBSD)
++$(eval $(call gb_UnpackedTarball_add_patches,cppunit,\
++	external/cppunit/openbsd-cppunit.patch \
++))
+ endif
+ 
+ # vim: set noet sw=4 ts=4:

@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_config_mh-bsd-gcc,v 1.4 2015/04/25 10:16:15 ajacoutot Exp $
+--- source/config/mh-bsd-gcc.orig	Tue Mar 16 06:14:02 2010
++++ source/config/mh-bsd-gcc	Sat Mar 20 11:16:31 2010
+@@ -21,7 +21,7 @@ LD_RPATH=	
+ LD_RPATH_PRE=	-Wl,-rpath,
+ 
+ ## Compiler switch to embed a library name
+-LD_SONAME = -Wl,-soname -Wl,$(notdir $(MIDDLE_SO_TARGET))
++LD_SONAME =
+ 
+ ## Shared library options
+ LD_SOOPTIONS= -Wl,-Bsymbolic

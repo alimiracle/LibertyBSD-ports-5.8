@@ -1,0 +1,31 @@
+/kde.port.mk/1.43/Tue Dec 24 10:38:48 2013//
+D/accessibility3////
+D/addons3////
+D/admin3////
+D/arts3////
+D/artwork3////
+D/base3////
+D/bindings3////
+D/edu3////
+D/games3////
+D/graphics3////
+D/i18n3////
+D/libs3////
+D/multimedia3////
+D/network3////
+D/okle////
+D/patches-3.1////
+D/patches-3.2////
+D/patches-3.2.3////
+D/patches-3.4////
+D/patches-3.5////
+D/patches-3.5.2////
+D/patches-3.5.3////
+D/patches-3.5.7////
+D/pim3////
+D/sdk3////
+D/toys3////
+D/utils3////
+D/webdev////
+/Makefile/1.67/Fri Jul 11 17:19:35 2014//
+/Makefile.inc/1.46/Fri Jul 17 07:52:58 2015//

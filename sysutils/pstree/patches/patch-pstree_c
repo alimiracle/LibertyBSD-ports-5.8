@@ -1,0 +1,12 @@
+$OpenBSD: patch-pstree_c,v 1.5 2015/05/22 13:45:30 schwarze Exp $
+--- pstree.c.orig	Thu May 21 11:23:56 2015
++++ pstree.c	Thu May 21 11:24:29 2015
+@@ -77,7 +77,7 @@ extern getargs(struct ProcInfo *, int, char *, int);
+  * (Net|Open|Free)BSD & Darwin merged by Ralf Meyer <ralf AT thp.Uni-Duisburg.DE>
+  */
+ #  define HAS_PGID
+-#  define PSCMD 	"ps -axwwo user,pid,ppid,pgid,command"
++#  define PSCMD 	"ps -kaxwwo user,pid,ppid,pgid,command"
+ #  define PSFORMAT 	"%s %ld %ld %ld %[^\n]"
+ #  define PSVARS	P[i].name, &P[i].pid, &P[i].ppid, &P[i].pgid, P[i].cmd
+ #  define PSVARSN	5

@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.4 2014/11/07 13:33:40 benoit Exp $
+--- configure.orig	Mon Jan  6 05:28:07 2014
++++ configure	Sun Apr  6 17:57:37 2014
+@@ -5278,7 +5278,7 @@ _ACEOF
+ 
+ if test -n "$GXX"; then
+         if test -z "$OPTIM"; then
+-        OPTIM="-Os -g"
++        OPTIM=""
+     fi
+ 
+         OPTIM="-Wall -Wunused -Wno-char-subscripts -Wno-format-y2k $OPTIM"

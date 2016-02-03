@@ -1,0 +1,11 @@
+$OpenBSD: patch-build_all_gyp,v 1.25 2015/07/23 13:44:04 robert Exp $
+--- build/all.gyp.orig.port	Wed Jul 15 22:29:56 2015
++++ build/all.gyp	Wed Jul 22 08:37:29 2015
+@@ -353,7 +353,6 @@
+             '../media/midi/midi.gyp:midi_unittests',
+             '../mojo/mojo.gyp:mojo',
+             '../ppapi/ppapi_internal.gyp:ppapi_unittests',
+-            '../remoting/remoting.gyp:remoting_unittests',
+             '../third_party/WebKit/public/all.gyp:all_blink',
+             '../third_party/cacheinvalidation/cacheinvalidation.gyp:cacheinvalidation_unittests',
+             '../third_party/leveldatabase/leveldatabase.gyp:env_chromium_unittests',

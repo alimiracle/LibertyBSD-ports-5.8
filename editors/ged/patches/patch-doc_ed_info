@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_ed_info,v 1.4 2015/04/07 10:26:47 pascal Exp $
+--- doc/ed.info.orig	Mon Mar 30 19:51:25 2015
++++ doc/ed.info	Tue Apr  7 12:25:06 2015
+@@ -2,7 +2,7 @@ This is ed.info, produced by makeinfo version 4.13+ fr
+ 
+ INFO-DIR-SECTION Basics
+ START-INFO-DIR-ENTRY
+-* Ed: (ed).                     The GNU line editor
++* Ed: (ged).                     The GNU line editor
+ END-INFO-DIR-ENTRY
+ 
+    Copyright (C) 1993, 1994, 2006-2015 Free Software Foundation, Inc.

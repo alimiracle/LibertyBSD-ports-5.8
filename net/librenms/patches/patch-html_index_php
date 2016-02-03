@@ -1,0 +1,12 @@
+$OpenBSD: patch-html_index_php,v 1.2 2015/07/16 02:50:33 sthen Exp $
+--- html/index.php.orig	Thu Jul 16 01:06:21 2015
++++ html/index.php	Thu Jul 16 01:06:30 2015
+@@ -12,7 +12,7 @@
+  *
+  */
+ 
+-if( strstr($_SERVER['SERVER_SOFTWARE'],"nginx") ) {
++if( strstr($_SERVER['SERVER_SOFTWARE'],"nginx") && !empty($_SERVER['PATH_TRANSLATED'])) {
+     $_SERVER['PATH_INFO'] = str_replace($_SERVER['PATH_TRANSLATED'].$_SERVER['PHP_SELF'],"",$_SERVER['ORIG_SCRIPT_FILENAME']);
+ }
+ else {

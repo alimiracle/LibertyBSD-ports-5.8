@@ -1,0 +1,15 @@
+$OpenBSD: patch-upnphttp_c,v 1.5 2014/09/03 21:15:44 sthen Exp $
+--- upnphttp.c.orig	Tue Aug 26 23:09:22 2014
++++ upnphttp.c	Wed Sep  3 13:28:00 2014
+@@ -1377,6 +1377,11 @@ SendResp_icon(struct upnphttp * h, char * icon)
+ 	start_dlna_header(&str, 200, "Interactive", mime);
+ 	strcatf(&str, "Content-Length: %d\r\n\r\n", size);
+ 
++	#ifndef MSG_MORE
++	/* linux uses this to combine multiple send() calls into a single packet */
++	#define MSG_MORE 0
++	#endif
++
+ 	if( send_data(h, str.data, str.off, MSG_MORE) == 0 )
+ 	{
+ 		if( h->req_command != EHead )

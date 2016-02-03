@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_vblast_h,v 1.2 2015/01/17 23:51:07 naddy Exp $
+--- src/vblast.h.orig	Tue Nov 23 06:41:32 2004
++++ src/vblast.h	Sun Jan 18 00:49:31 2015
+@@ -20,7 +20,7 @@
+ #endif
+ #endif
+ 
+-#ifdef __NetBSD__
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ # define VB_IS_UNIX    1
+ # define USE_SIN_LEN   1
+ # define USE_UGEN      1
+@@ -46,12 +46,9 @@
+ # include <sys/types.h>
+ # include <errno.h>
+ # include <string.h>
+-#ifdef __FreeBSD__
++# include <limits.h>
+ # include <stdlib.h>
+-# include <machine/limits.h>
+-#else
+-# include <malloc.h>
+-#endif
++# include <unistd.h>
+ # include <sys/select.h>
+ # include <sys/socket.h>
+ # include <netinet/in.h>
