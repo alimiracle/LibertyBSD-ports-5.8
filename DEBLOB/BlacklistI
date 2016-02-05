@@ -53,3 +53,15 @@ devel/p5-Algorithm-Annotate
 devel/p5-C-Scan
 devel/p5-Data-Flow
 devel/p5-Getopt-Simple
+comms/p5-Device-Gsm
+comms/p5-Device-SerialPort
+devel/afl
+devel/csmith
+devel/gitsh
+devel/hs-scientific
+devel/hs-utf8-string
+devel/javahelp
+devel/jimarc4random
+devel/jdk
+devel/tclarc4random
+games/adom

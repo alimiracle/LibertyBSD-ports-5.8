@@ -53,3 +53,15 @@ p5-Algorithm-Annotate
 p5-C-Scan
 p5-Data-Flow
 p5-Getopt-Simple
+p5-Device-Gsm
+p5-Device-SerialPort
+afl
+csmith
+gitsh
+hs-scientific
+hs-utf8-string
+javahelp
+jimarc4random
+jdk
+tclarc4random
+adom
